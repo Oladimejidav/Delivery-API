@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('date_of_birth');
-            $table->text('phoneNumber');
-            $table->text('nationality');
-            $table->text('state');
-            $table->text('address');
+            $table->bigInteger('user_id');
+            $table->string('date_of_birth');
+            $table->string('phoneNumber');
+            $table->string('nationality');
+            $table->string('state');
+            $table->string('address');
             $table->timestamps();
         });
     }
