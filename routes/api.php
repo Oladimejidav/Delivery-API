@@ -15,7 +15,7 @@ Route::post('/agent_registration', [AuthController::class, 'AgentRegistration'])
 Route::post('/customer_login', [AuthController::class, 'CustomerLogin']);
 Route::post('/agent_login', [AuthController::class, 'AgentLogin']);
 Route::post('/logout', [AuthController::class, 'Logout']);
-    
+
 // Routes that require authentication
 Route::middleware('auth:sanctum')->group(function () {
     // package group
