@@ -113,4 +113,6 @@ class AuthController extends Controller
 
         return response($response, 201);
     }
+    public function Logout(Request $request)
+    {}
 }
