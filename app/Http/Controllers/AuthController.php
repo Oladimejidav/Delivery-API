@@ -146,22 +146,42 @@ class AuthController extends Controller
 
         $fields = $request->validate([
             'email' => 'required|string|unique:users,email',
-            'password' => 'required|string|confirmed'
+            'password' => 'required|string'
         ]);
+
         // Check email
-        $user = Customer::where('email', $fields['email'])->first();
+        $user = User::where('email', $fields['email'])->first();
 
         // Check password
         if(!$user || !Hash::check($fields['password'], $user->password)) {
             return response([
-                'message' => 'Bad creds'
+                'message' => 'Credentials not found in our record'
             ], 401);
         }
 
+        // Retrieve the user data with the specified user_id
+        $customer = User::with('customer')->find($user->id);
+        
         $token = $user->createToken('myapptoken')->plainTextToken;
-
+        
         $response = [
-            'user' => $user,
+            'message' => 'Customer login is successful!',
+            'user' => [
+                'id' => $customer->id,
+                'customer_id' => $customer->customer->id,
+                'name' => $customer->name,
+                'email' => $customer->email,
+                'email_verified_at' => $customer->email_verified_at,
+                'role' => $customer->role,
+                'user_id' => $customer->customer->user_id,
+                'date_of_birth' => $customer->customer->date_of_birth,
+                'phoneNumber' => $customer->customer->phoneNumber,
+                'nationality' => $customer->customer->nationality,
+                'state' => $customer->customer->state,
+                'address' => $customer->customer->address,
+                'created_at' => $customer->customer->created_at,
+                'updated_at' => $customer->customer->updated_at,
+            ],
             'token' => $token
         ];
 
@@ -172,7 +192,7 @@ class AuthController extends Controller
     {
         $fields = $request->validate([
             'email' => 'required|string|unique:users,email',
-            'password' => 'required|string|confirmed'
+            'password' => 'required|string'
         ]);
         // Check email
         $user = Agent::where('email', $fields['email'])->first();
@@ -180,14 +200,41 @@ class AuthController extends Controller
         // Check password
         if(!$user || !Hash::check($fields['password'], $user->password)) {
             return response([
-                'message' => 'Bad creds'
+                'message' => 'Credentials not found in our record'
             ], 401);
         }
+
+        // Eager load the agent details along with the user information
+        $agent = User::with('agent')->find($user->id);
 
         $token = $user->createToken('myapptoken')->plainTextToken;
 
         $response = [
-            'user' => $user,
+            'message' => 'Agent login is successful!',
+            'user' => [
+                'id' => $agent->id,
+                'agent_id' => $agent->agent->user_id,
+                'name' => $agent->name,
+                'email' => $agent->email,
+                'email_verified_at' => $agent->email_verified_at,
+                'role' => $agent->role,
+                'date_of_birth' => $agent->agent->date_of_birth,
+                'phoneNumber' => $agent->agent->phoneNumber,
+                'pasport' => $agent->agent->pasport,
+                'personal_id' => $agent->agent->personal_id,
+                'nationality' => $agent->agent->nationality,
+                'state' => $agent->agent->state,
+                'address' => $agent->agent->address,
+                'guarantor_phoneNumber' => $agent->agent->guarantor_phoneNumber,
+                'guarantor_pasport' => $agent->agent->guarantor_pasport,
+                'guarantor_personal_id' => $agent->agent->guarantor_personal_id,
+                'guarantor_nationality' => $agent->agent->guarantor_nationality,
+                'guarantor_state' => $agent->agent->guarantor_state,
+                'guarantor_address' => $agent->agent->guarantor_address,
+                'agent_role' => $agent->agent->agent_role,
+                'created_at' => $agent->agent->created_at,
+                'updated_at' => $agent->agent->updated_at,
+            ],
             'token' => $token
         ];
 
