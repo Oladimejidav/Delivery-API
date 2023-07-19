@@ -63,6 +63,7 @@ class AuthController extends Controller
     // login methods
     public function CustomerLogin(Request $request)
     {
+
         $fields = $request->validate([
             'email' => 'required|string|unique:users,email',
             'password' => 'required|string|confirmed'
