@@ -9,12 +9,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/customer_registration', AuthController::class, 'CustomerRegistration');
-Route::post('/agent_registration', AuthController::class, 'AgentRegistration');
-Route::post('/customer_login', AuthController::class, 'CustomerLogin');
-Route::post('/agent_login', AuthController::class, 'AgentLogin');
-Route::post('/logout', AuthController::class, 'Logout');
+// auth group
+Route::post('/customer_registration', [AuthController::class, 'CustomerRegistration']);
+Route::post('/agent_registration', [AuthController::class, 'AgentRegistration']);
+Route::post('/customer_login', [AuthController::class, 'CustomerLogin']);
+Route::post('/agent_login', [AuthController::class, 'AgentLogin']);
+Route::post('/logout', [AuthController::class, 'Logout']);
 
-Route::post('/save_package', PackageController::class, 'save_package');
-Route::post('/get_package{$id}', PackageController::class, 'get_package');
-Route::post('/get_packages', PackageController::class, 'get_packages');
+// Routes that require authentication
+Route::middleware('auth:sanctum')->group(function () {
+    // package group
+    Route::post('/save_package', [PackageController::class, 'save_package']);
+    Route::post('/get_package/{id}', [PackageController::class, 'get_package']);
+    Route::post('/get_packages', [PackageController::class, 'get_packages']);
+});
