@@ -29,7 +29,7 @@ class AuthController extends Controller
             'email' => $fields['email'],
             'password' => bcrypt($fields['password'])
         ]);
-
+        
         $customerRegistered = Customer::create([
             'user_id' => $user->id,
             'date_of_birth' => $request->date_of_birth,
@@ -38,15 +38,28 @@ class AuthController extends Controller
             'state' => $request->state,
             'address' => $request->address
         ]);
-
         // Retrieve the user data with the specified user_id
-        $customer = User::find($user->id);
-
+        $customer = User::with('customer')->find($user->id);
         $token = $user->createToken('myapptoken')->plainTextToken;
-
+        
         $response = [
             'message' => 'Customer registration was successful!',
-            'user' => $customer,
+            'user' => [
+                'id' => $customer->id,
+                'customer_id' => $customer->customer->id,
+                'name' => $customer->name,
+                'email' => $customer->email,
+                'email_verified_at' => $customer->email_verified_at,
+                'role' => $customer->role,
+                'user_id' => $customer->customer->user_id,
+                'date_of_birth' => $customer->customer->date_of_birth,
+                'phoneNumber' => $customer->customer->phoneNumber,
+                'nationality' => $customer->customer->nationality,
+                'state' => $customer->customer->state,
+                'address' => $customer->customer->address,
+                'created_at' => $customer->customer->created_at,
+                'updated_at' => $customer->customer->updated_at,
+            ],
             'token' => $token
         ];
 
@@ -87,15 +100,37 @@ class AuthController extends Controller
             'agent_role' => $request->agent_role
         ]);
 
-        $agent = User::where('id', $user->id)
-            ->join('agents', 'users.id', $agentRegistered->user_id)
-            ->select('users.*', 'agents.*');
+        // Eager load the agent details along with the user information
+        $agent = User::with('agent')->find($user->id);
 
         $token = $user->createToken('myapptoken')->plainTextToken;
 
         $response = [
-            'message' => 'agent registration was successful!',
-            'user' => $agent,
+            'message' => 'Agent registration was successful!',
+            'user' => [
+                'id' => $agent->id,
+                'agent_id' => $agent->agent->user_id,
+                'name' => $agent->name,
+                'email' => $agent->email,
+                'email_verified_at' => $agent->email_verified_at,
+                'role' => $agent->role,
+                'date_of_birth' => $agent->agent->date_of_birth,
+                'phoneNumber' => $agent->agent->phoneNumber,
+                'pasport' => $agent->agent->pasport,
+                'personal_id' => $agent->agent->personal_id,
+                'nationality' => $agent->agent->nationality,
+                'state' => $agent->agent->state,
+                'address' => $agent->agent->address,
+                'guarantor_phoneNumber' => $agent->agent->guarantor_phoneNumber,
+                'guarantor_pasport' => $agent->agent->guarantor_pasport,
+                'guarantor_personal_id' => $agent->agent->guarantor_personal_id,
+                'guarantor_nationality' => $agent->agent->guarantor_nationality,
+                'guarantor_state' => $agent->agent->guarantor_state,
+                'guarantor_address' => $agent->agent->guarantor_address,
+                'agent_role' => $agent->agent->agent_role,
+                'created_at' => $agent->agent->created_at,
+                'updated_at' => $agent->agent->updated_at,
+            ],
             'token' => $token
         ];
 

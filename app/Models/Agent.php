@@ -27,4 +27,12 @@ class Agent extends Model
         'guarantor_address',
         'agent_role',
     ];
+    
+    /*
+     * Define the inverse of the one-to-one relationship with the User model.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
