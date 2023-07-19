@@ -41,4 +41,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    /**
+     * Define the one-to-one relationship with the Customer model.
+     */
+    public function customer()
+    {
+        return $this->hasOne(Customer::class);
+    }
+    
+    /**
+     * Define the one-to-one relationship with the Agent model.
+     */
+    public function agent()
+    {
+        return $this->hasOne(Agent::class);
+    }
 }

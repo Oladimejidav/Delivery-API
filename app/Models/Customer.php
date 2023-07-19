@@ -16,4 +16,12 @@ class Customer extends Model
         'state',
         'address',
     ];
+
+    /*
+     * Define the inverse of the one-to-one relationship with the User model.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

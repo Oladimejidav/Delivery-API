@@ -29,7 +29,7 @@ class AuthController extends Controller
             'email' => $fields['email'],
             'password' => bcrypt($fields['password'])
         ]);
-
+        
         $customerRegistered = Customer::create([
             'user_id' => $user->id,
             'date_of_birth' => $request->date_of_birth,
@@ -38,13 +38,12 @@ class AuthController extends Controller
             'state' => $request->state,
             'address' => $request->address
         ]);
-
-        $customer = User::where('id', $user->id)
-        ->join('customers', 'users.id', $customerRegistered->user_id)
-        ->select('users.*', 'customers.*');
-
+        
+        // Retrieve the user data with the specified user_id
+        $customer = User::with('customer')->find($user->id);
+        
         $token = $user->createToken('myapptoken')->plainTextToken;
-
+        
         $response = [
             'message' => 'Customer registration was successful!',
             'user' => $customer,
