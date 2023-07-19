@@ -32,15 +32,15 @@ class AuthController extends Controller
 
         $customerRegistered = Customer::create([
             'user_id' => $user->id,
-            'date_of_birth' => $fields['date_of_birth'],
-            'phoneNumber' => $fields['phoneNumber'],
-            'nationality' => $fields['nationality'],
-            'state' => $fields['state'],
-            'address' => $fields['address']
+            'date_of_birth' => $request->date_of_birth,
+            'phoneNumber' => $request->phoneNumber,
+            'nationality' => $request->nationality,
+            'state' => $request->state,
+            'address' => $request->address
         ]);
 
         $customer = User::where('id', $user->id)
-        ->join('customers', 'users.id', $customerRegistered->users_id)
+        ->join('customers', 'users.id', $customerRegistered->user_id)
         ->select('users.*', 'customers.*');
 
         $token = $user->createToken('myapptoken')->plainTextToken;
@@ -58,6 +58,50 @@ class AuthController extends Controller
     public function AgentRegistration(Request $request)
     {
         
+        $fields = $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|string|unique:users,email',
+            'password' => 'required|string|confirmed'
+        ]);
+
+        $user = User::create([
+            'name' => $fields['name'],
+            'email' => $fields['email'],
+            'password' => bcrypt($fields['password'])
+        ]);
+
+        $agentRegistered = Agent::create([
+            'user_id' => $user->id,
+            'date_of_birth' => $request->date_of_birth,
+            'phoneNumber' => $request->phoneNumber,
+            'pasport' => $request->pasport,
+            'personal_id' => $request->personal_id,
+            'nationality' => $request->nationality,
+            'state' => $request->state,
+            'address' => $request->address,
+            'guarantor_phoneNumber' => $request->guarantor_phoneNumber,
+            'guarantor_pasport' => $request->guarantor_pasport,
+            'guarantor_personal_id' => $request->guarantor_personal_id,
+            'guarantor_nationality' => $request->guarantor_nationality,
+            'guarantor_state' => $request->guarantor_state,
+            'guarantor_address' => $request->guarantor_address,
+            'agent_role' => $request->agent_role
+        ]);
+
+        $agent = User::where('id', $user->id)
+        ->join('agents', 'users.id', $agentRegistered->user_id)
+        ->select('users.*', 'agents.*');
+
+        $token = $user->createToken('myapptoken')->plainTextToken;
+
+        $response = [
+            'message' => 'agent registration was successful!',
+            'user' => $agent,
+            'token' => $token
+        ];
+
+        // Call the success() method from ResponseTrait and pass the $response data
+        return $this->success($response, 201);
     }
 
     // login methods
