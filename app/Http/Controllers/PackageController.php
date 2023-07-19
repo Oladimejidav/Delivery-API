@@ -13,29 +13,21 @@ use App\Models\Customer;
 
 class PackageController extends Controller
 {
-    public function save_package()
+    public function save_package(Request $request)
     {
-        // Create a new package record
-        $package = Package::create([
-            'trackingNumber' => '',
-            'description' => '',
-            'sender' => '',
-            'recipient' => '',
-            'customer_id' => 1,
-            'weight' => '2 kg',
-            'distance' => '',
-            'dimensions' => '',
-            'shipmentValue' => '',
-            'shippingType' => '',
-            'isAccepted' => ,
-            'isShipped' => '',
-            'shippingDate' => '',
-            'deliveryDate' => '',
-            'trackingHistory' => '',
-            'imageUri' => ,
-            'shippingCost' => '',
-        ]);
+
+        $new_package = new Package();
+        $new_package->fill($request->all());
+
+        // TO SAVE THE IMAGE
+        $image = $request->imageUri;
+        $imagename = time() . '.' . $image->getClientOriginalExtension();
+        $request->imageUri->move('imageUriFolder', $imagename);
+        $new_package->imageUri = $imagename;
+
+        $new_package->save();
     }
+
 
 
     public function get_package()
