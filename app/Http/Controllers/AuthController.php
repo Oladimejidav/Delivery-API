@@ -29,7 +29,7 @@ class AuthController extends Controller
             'email' => $fields['email'],
             'password' => bcrypt($fields['password'])
         ]);
-        
+
         $customerRegistered = Customer::create([
             'user_id' => $user->id,
             'date_of_birth' => $request->date_of_birth,
@@ -41,7 +41,7 @@ class AuthController extends Controller
         // Retrieve the user data with the specified user_id
         $customer = User::with('customer')->find($user->id);
         $token = $user->createToken('myapptoken')->plainTextToken;
-        
+
         $response = [
             'message' => 'Customer registration was successful!',
             'user' => [
@@ -64,7 +64,7 @@ class AuthController extends Controller
         ];
 
         // Call the success() method from ResponseTrait and pass the $response data
-        return $this->success($response,  201);
+        return $this->success($response, 201);
     }
 
     public function AgentRegistration(Request $request)
@@ -144,7 +144,7 @@ class AuthController extends Controller
 
         $fields = $request->validate([
             'email' => 'required|string|unique:users,email',
-            'password' => 'required|string|confirmed'
+            'password' => 'required|string'
         ]);
         // Check email
         $user = Customer::where('email', $fields['email'])->first();
@@ -170,7 +170,7 @@ class AuthController extends Controller
     {
         $fields = $request->validate([
             'email' => 'required|string|unique:users,email',
-            'password' => 'required|string|confirmed'
+            'password' => 'required|string'
         ]);
         // Check email
         $user = Agent::where('email', $fields['email'])->first();
