@@ -17,7 +17,7 @@ class AuthController extends Controller
     // registration methods
     public function CustomerRegistration(Request $request)
     {
-        
+
         $fields = $request->validate([
             'name' => 'required|string',
             'email' => 'required|string|unique:users,email',
@@ -38,10 +38,8 @@ class AuthController extends Controller
             'state' => $request->state,
             'address' => $request->address
         ]);
-        
         // Retrieve the user data with the specified user_id
         $customer = User::with('customer')->find($user->id);
-        
         $token = $user->createToken('myapptoken')->plainTextToken;
         
         $response = [
@@ -66,12 +64,12 @@ class AuthController extends Controller
         ];
 
         // Call the success() method from ResponseTrait and pass the $response data
-        return $this->success($response, 201);
+        return $this->success($response,  201);
     }
 
     public function AgentRegistration(Request $request)
     {
-        
+
         $fields = $request->validate([
             'name' => 'required|string',
             'email' => 'required|string|unique:users,email',
@@ -153,7 +151,7 @@ class AuthController extends Controller
         $user = User::where('email', $fields['email'])->first();
 
         // Check password
-        if(!$user || !Hash::check($fields['password'], $user->password)) {
+        if (!$user || !Hash::check($fields['password'], $user->password)) {
             return response([
                 'message' => 'Credentials not found in our record'
             ], 401);
@@ -198,7 +196,7 @@ class AuthController extends Controller
         $user = Agent::where('email', $fields['email'])->first();
 
         // Check password
-        if(!$user || !Hash::check($fields['password'], $user->password)) {
+        if (!$user || !Hash::check($fields['password'], $user->password)) {
             return response([
                 'message' => 'Credentials not found in our record'
             ], 401);
@@ -240,4 +238,6 @@ class AuthController extends Controller
 
         return response($response, 201);
     }
+    public function Logout(Request $request)
+    {}
 }
