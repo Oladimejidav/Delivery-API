@@ -29,7 +29,7 @@ class AuthController extends Controller
             'email' => $fields['email'],
             'password' => bcrypt($fields['password'])
         ]);
-        
+
         $customerRegistered = Customer::create([
             'user_id' => $user->id,
             'date_of_birth' => $request->date_of_birth,
@@ -41,7 +41,7 @@ class AuthController extends Controller
         // Retrieve the user data with the specified user_id
         $customer = User::with('customer')->find($user->id);
         $token = $user->createToken('myapptoken')->plainTextToken;
-        
+
         $response = [
             'message' => 'Customer registration was successful!',
             'user' => [
@@ -64,12 +64,12 @@ class AuthController extends Controller
         ];
 
         // Call the success() method from ResponseTrait and pass the $response data
-        return $this->success($response,  201);
+        return $this->success($response, 201);
     }
 
     public function AgentRegistration(Request $request)
     {
-
+     
         $fields = $request->validate([
             'name' => 'required|string',
             'email' => 'required|string|unique:users,email',
@@ -143,8 +143,8 @@ class AuthController extends Controller
     {
 
         $fields = $request->validate([
-            'email' => 'required|string|unique:users,email',
-            'password' => 'required|string'
+            'email' => 'required',
+            'password' => 'required'
         ]);
 
         // Check email
@@ -159,9 +159,9 @@ class AuthController extends Controller
 
         // Retrieve the user data with the specified user_id
         $customer = User::with('customer')->find($user->id);
-        
+
         $token = $user->createToken('myapptoken')->plainTextToken;
-        
+
         $response = [
             'message' => 'Customer login is successful!',
             'user' => [
@@ -189,11 +189,11 @@ class AuthController extends Controller
     public function AgentLogin(Request $request)
     {
         $fields = $request->validate([
-            'email' => 'required|string|unique:users,email',
+            'email' => 'required|string',
             'password' => 'required|string'
         ]);
         // Check email
-        $user = Agent::where('email', $fields['email'])->first();
+        $user = User::where('email', $fields['email'])->first();
 
         // Check password
         if (!$user || !Hash::check($fields['password'], $user->password)) {
@@ -239,5 +239,6 @@ class AuthController extends Controller
         return response($response, 201);
     }
     public function Logout(Request $request)
-    {}
+    {
+    }
 }
