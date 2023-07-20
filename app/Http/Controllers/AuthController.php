@@ -69,7 +69,7 @@ class AuthController extends Controller
 
     public function AgentRegistration(Request $request)
     {
-
+     
         $fields = $request->validate([
             'name' => 'required|string',
             'email' => 'required|string|unique:users,email',
@@ -143,8 +143,8 @@ class AuthController extends Controller
     {
 
         $fields = $request->validate([
-            'email' => 'required|string|unique:users,email',
-            'password' => 'required|string'
+            'email' => 'required',
+            'password' => 'required'
         ]);
 
         // Check email
@@ -159,9 +159,9 @@ class AuthController extends Controller
 
         // Retrieve the user data with the specified user_id
         $customer = User::with('customer')->find($user->id);
-        
+
         $token = $user->createToken('myapptoken')->plainTextToken;
-        
+
         $response = [
             'message' => 'Customer login is successful!',
             'user' => [
@@ -189,11 +189,11 @@ class AuthController extends Controller
     public function AgentLogin(Request $request)
     {
         $fields = $request->validate([
-            'email' => 'required|string|unique:users,email',
+            'email' => 'required|string',
             'password' => 'required|string'
         ]);
         // Check email
-        $user = Agent::where('email', $fields['email'])->first();
+        $user = User::where('email', $fields['email'])->first();
 
         // Check password
         if (!$user || !Hash::check($fields['password'], $user->password)) {
@@ -239,5 +239,6 @@ class AuthController extends Controller
         return response($response, 201);
     }
     public function Logout(Request $request)
-    {}
+    {
+    }
 }

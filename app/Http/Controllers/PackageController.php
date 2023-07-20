@@ -25,7 +25,28 @@ class PackageController extends Controller
         $new_package->imageUri = $imagename;
 
         $new_package->save();
+
+        return $new_package;
     }
+
+
+
+    public function agent_save_package(Request $request)
+    {
+
+        $new_package = new Package();
+        $new_package->fill($request->all());
+        $new_package->customer_id = auth()->user()->id;
+
+        // TO SAVE THE IMAGE
+        $image = $request->imageUri;
+        $imagename = time() . '.' . $image->getClientOriginalExtension();
+        $request->imageUri->move('imageUriFolder', $imagename);
+        $new_package->imageUri = $imagename;
+
+        $new_package->save();
+    }
+
 
 
 
