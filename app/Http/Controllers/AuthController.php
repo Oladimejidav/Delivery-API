@@ -64,7 +64,7 @@ class AuthController extends Controller
         ];
 
         // Call the success() method from ResponseTrait and pass the $response data
-        return $this->success($response,  201);
+        return $this->success($response, 201);
     }
 
     public function AgentRegistration(Request $request)
@@ -143,11 +143,11 @@ class AuthController extends Controller
     {
 
         $fields = $request->validate([
-            'email' => 'required|string|unique:users,email',
-            'password' => 'required|string|confirmed'
+            'email' => 'required',
+            'password' => 'required'
         ]);
         // Check email
-        $user = Customer::where('email', $fields['email'])->first();
+        $user = User::where('email', $fields['email'])->first();
 
         // Check password
         if (!$user || !Hash::check($fields['password'], $user->password)) {
@@ -169,11 +169,11 @@ class AuthController extends Controller
     public function AgentLogin(Request $request)
     {
         $fields = $request->validate([
-            'email' => 'required|string|unique:users,email',
-            'password' => 'required|string|confirmed'
+            'email' => 'required',
+            'password' => 'required'
         ]);
         // Check email
-        $user = Agent::where('email', $fields['email'])->first();
+        $user = User::where('email', $fields['email'])->first();
 
         // Check password
         if (!$user || !Hash::check($fields['password'], $user->password)) {
