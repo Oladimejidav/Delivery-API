@@ -22,4 +22,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/save_package', [PackageController::class, 'save_package']);
     Route::post('/get_package/{id}', [PackageController::class, 'get_package']);
     Route::post('/get_packages', [PackageController::class, 'get_packages']);
+    // update the package status
+    Route::post('/update_isShipped', [PackageController::class, 'update_isShipped']);
+    Route::post('/update_isAccepted', [PackageController::class, 'update_isAccepted']);
 });
