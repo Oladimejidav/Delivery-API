@@ -29,7 +29,7 @@ class AuthController extends Controller
             'email' => $fields['email'],
             'password' => bcrypt($fields['password'])
         ]);
-        
+
         $customerRegistered = Customer::create([
             'user_id' => $user->id,
             'date_of_birth' => $request->date_of_birth,
@@ -41,17 +41,15 @@ class AuthController extends Controller
         // Retrieve the user data with the specified user_id
         $customer = User::with('customer')->find($user->id);
         $token = $user->createToken('myapptoken')->plainTextToken;
-        
+
         $response = [
             'message' => 'Customer registration was successful!',
-            'user' => [
+            'customer' => [
                 'id' => $customer->id,
                 'customer_id' => $customer->customer->id,
                 'name' => $customer->name,
                 'email' => $customer->email,
-                'email_verified_at' => $customer->email_verified_at,
                 'role' => $customer->role,
-                'user_id' => $customer->customer->user_id,
                 'date_of_birth' => $customer->customer->date_of_birth,
                 'phoneNumber' => $customer->customer->phoneNumber,
                 'nationality' => $customer->customer->nationality,
@@ -64,12 +62,11 @@ class AuthController extends Controller
         ];
 
         // Call the success() method from ResponseTrait and pass the $response data
-        return $this->success($response,  201);
+        return $this->success($response, 201);
     }
     
     public function AgentRegistration(Request $request)
     {
-        
         $fields = $request->validate([
             'name' => 'required|string',
             'email' => 'required|string|unique:users,email',
@@ -108,13 +105,12 @@ class AuthController extends Controller
 
         $response = [
             'message' => 'Agent registration was successful!',
-            'user' => [
+            'agent' => [
                 'id' => $agent->id,
                 'agent_id' => $agent->agent->user_id,
                 'name' => $agent->name,
                 'email' => $agent->email,
-                'email_verified_at' => $agent->email_verified_at,
-                'role' => $agent->role,
+                'role' => intval($agent->role),
                 'date_of_birth' => $agent->agent->date_of_birth,
                 'phoneNumber' => $agent->agent->phoneNumber,
                 'pasport' => $agent->agent->pasport,
@@ -160,7 +156,6 @@ class AuthController extends Controller
 
         // Retrieve the user data with the specified user_id
         $customer = User::with('customer')->find($user->id);
-        
         $token = $user->createToken('myapptoken')->plainTextToken;
         
         $response = [
@@ -188,7 +183,7 @@ class AuthController extends Controller
     public function AgentLogin(Request $request)
     {
         $fields = $request->validate([
-            'email' => 'required|email',
+            'email' => 'required|email
             'password' => 'required'
         ]);
         // Check email

@@ -28,4 +28,8 @@ class Package extends Model
         'imageUri',
         'shippingCost',
     ];
+
+
+
+
 }
