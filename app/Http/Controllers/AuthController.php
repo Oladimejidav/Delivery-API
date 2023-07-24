@@ -64,10 +64,9 @@ class AuthController extends Controller
         // Call the success() method from ResponseTrait and pass the $response data
         return $this->success($response, 201);
     }
-
+    
     public function AgentRegistration(Request $request)
     {
-     
         $fields = $request->validate([
             'name' => 'required|string',
             'email' => 'required|string|unique:users,email',
@@ -77,6 +76,7 @@ class AuthController extends Controller
         $user = User::create([
             'name' => $fields['name'],
             'email' => $fields['email'],
+            'role' => 1,
             'password' => bcrypt($fields['password'])
         ]);
 
@@ -140,7 +140,7 @@ class AuthController extends Controller
     {
 
         $fields = $request->validate([
-            'email' => 'required',
+            'email' => 'required|email',
             'password' => 'required'
         ]);
 
@@ -166,8 +166,6 @@ class AuthController extends Controller
                 'name' => $customer->name,
                 'email' => $customer->email,
                 'email_verified_at' => $customer->email_verified_at,
-                'role' => $customer->role,
-                'user_id' => $customer->customer->user_id,
                 'date_of_birth' => $customer->customer->date_of_birth,
                 'phoneNumber' => $customer->customer->phoneNumber,
                 'nationality' => $customer->customer->nationality,
@@ -185,7 +183,7 @@ class AuthController extends Controller
     public function AgentLogin(Request $request)
     {
         $fields = $request->validate([
-            'email' => 'required',
+            'email' => 'required|email
             'password' => 'required'
         ]);
         // Check email
@@ -235,6 +233,5 @@ class AuthController extends Controller
         return response($response, 201);
     }
     public function Logout(Request $request)
-    {
-    }
+    {}
 }
