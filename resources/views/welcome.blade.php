@@ -161,7 +161,7 @@
                         <form action="#" class="space-y-8">
                             <div>
                                 <label for="email" class="block mb-2 text-sm font-medium text-gray-100">Your email</label>
-                                <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-100 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" placeholder="name@flowbite.com" required>
+                                <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-100 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" placeholder="name@dashex.com" required>
                             </div>
                             <div>
                                 <label for="subject" class="block mb-2 text-sm font-medium text-gray-100 ">Subject</label>
