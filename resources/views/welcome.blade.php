@@ -8,8 +8,10 @@
 </head>
 <body>
     {{-- yemi will do the hero section and the introduction --}}
-    <section></section>
-    <section></section>
+    <section>
+        <section></section>
+        <section></section>
+    </section>
 
     {{-- david will do the contact us and download --}}
     <section></section>
