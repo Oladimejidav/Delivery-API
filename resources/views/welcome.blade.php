@@ -50,10 +50,10 @@
         }
         header .fore-bird{
             position: absolute;
-            top: 199px;
+            top: 40%;
             right: 37%;
-            width: 795px;
-            height: 800px;
+            width: 40%;
+            height: 100%;
             background-image: url("{{ asset('img/white-mode.png') }}");
             background-repeat: no-repeat;
             background-position: right bottom;
@@ -119,16 +119,15 @@
         </div>
         <div class="fore-bird"></div>
     </header>
-    {{-- intro section --}}
-    <section>
-        <!-- Container for intro-->
-        <div class="container mx-auto md:px-6 rounded p-4 md:p-12">
+    </section>
+    <section class="bg-white">
+        <div class="container mx-auto md:px-6 bg-white rounded p-4 md:p-12">
             <!-- Section: Design Block -->
-            <section class="content mb-12">
+            <section>
                 <div class="flex flex-wrap">
-                    <div class="mb-10 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
-                        <h2 class="mb-6 text-4xl font-bold text-gray-50">Welcome to DashEx!</h2>
-                        <p class="mb-6 text-neutral-100">
+                    <div class="mb-10 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-3/4 md:px-3 lg:px-6">
+                        <h2 class="mb-6 text-4xl font-bold text-gray-800">Welcome to DashEx!</h2>
+                        <p class="mb-6 text-gray-800">
                             We are a dynamic and innovative logistics company dedicated 
                             to providing top-notch services to our clients. With over one decade of industry 
                             experience, our team excels in delivering efficient and reliable solutions for 
@@ -142,19 +141,17 @@
                             most – growing your business.
                         </p>
                     </div>
-                    {{-- img --}}
-                    <div class="w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
+                    {{-- form --}}
+                    <div class="w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-1/4 md:px-3 lg:px-6">                        
                         <img src="{{ asset('img/black-mode.png') }}" alt="dark mode" />
                     </div>
                 </div>
             </section>
             <!-- Section: Design Block -->
         </div>
-        <!-- Container for contact form -->
     </section>
-
     {{-- yemi will do the contact us and download --}}
-    {{-- contact section --}}
+    {{-- intro section --}}
     <section class="mb-32 bg-gray-800">
         <!-- Container for contact us -->
         <div class="container my-10 mx-auto md:px-6">
