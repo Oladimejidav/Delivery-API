@@ -20,6 +20,9 @@ Route::post('/logout', [AuthController::class, 'Logout']);
 Route::middleware('auth:sanctum')->group(function () {
     // package group
     Route::post('/save_package', [PackageController::class, 'save_package']);
-    Route::get('/get_package/{id}', [PackageController::class, 'get_package']);
-    Route::get('/get_packages', [PackageController::class, 'get_packages']);
+    Route::post('/get_package/{id}', [PackageController::class, 'get_package']);
+    Route::post('/get_packages', [PackageController::class, 'get_packages']);
+    // update the package status
+    Route::post('/update_isShipped', [PackageController::class, 'update_isShipped']);
+    Route::post('/update_isAccepted', [PackageController::class, 'update_isAccepted']);
 });
