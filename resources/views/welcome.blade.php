@@ -11,13 +11,146 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 2000px;
+            font-family: sans-serif;
+        }
+        .header{
+            position: relative;
+            height: 100vh;
+            background: url("{{asset('img/background.jpg')}}") no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            overflow: hidden;
+            overflow-y: revert;
+            perspective: 10px;
+        }
+        header::-webkit-scrollbar{
+            display: none;
+        }
+        header .logo-header{
+            position: absolute;
+            top: 4%;
+            left: 0;
+            right: 0;
+            display: block;
+        }
+        header .cta{
+            position: absolute;
+            top: 4%;
+            left: 0;
+            right: 0;
+            display: block;
 
+        }
+        header .fore-bird{
+            position: absolute;
+            top: 199px;
+            right: 37%;
+            width: 795px;
+            height: 800px;
+            background-image: url("{{ asset('img/white-mode.png') }}");
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            z-index: 1;
+        }
+        .content{
+            max-width: 1140px;
+            margin: 0 auto;
+            font-size: 20px;
+        }
+        .centered {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 3.3em;
+            font-weight: bold;
+            font-family: "Lucida Console";
+        }
+        .wrapper {
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .typing-demo {
+            width: 34ch;
+            animation: typing 2s steps(12), blink .5s step-end infinite alternate;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            font-family: monospace;
+            font-size: 3rem;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+    </style>
+</head>
 <body class="bg-gray-900">
     {{-- david will do the hero section and the testimonial --}}
+    {{-- hero section --}}
+    <header class="header">
+        <div class="back-bird"></div>
+        <img src="{{asset('img/logo.png')}}" class="logo-header" alt="logo" style="height: 10%; padding-left:3%; width: auto;">
+        {{-- <a href="">CTA</a> --}}        
+        <div class="centered">
+            <div class="wrapper">
+                <h1 class="typing-demo">
+                    We Are Local In the state of Lagos 
+                </h1>
+              </div>
+        </div>
+        <div class="fore-bird"></div>
+    </header>
+    {{-- intro section --}}
     <section>
-        <section></section>
-        <section></section>
+        <!-- Container for intro-->
+        <div class="container mx-auto md:px-6 rounded p-4 md:p-12">
+            <!-- Section: Design Block -->
+            <section class="content mb-12">
+                <div class="flex flex-wrap">
+                    <div class="mb-10 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
+                        <h2 class="mb-6 text-4xl font-bold text-gray-50">Welcome to DashEx!</h2>
+                        <p class="mb-6 text-neutral-100">
+                            We are a dynamic and innovative logistics company dedicated 
+                            to providing top-notch services to our clients. With over one decade of industry 
+                            experience, our team excels in delivering efficient and reliable solutions for 
+                            all your supply chain needs. From handling intricate international shipments to 
+                            streamlining local deliveries, we pride ourselves on our commitment to customer 
+                            satisfaction. Our state-of-the-art technologies, coupled with our expert staff, 
+                            enable us to navigate the complexities of the logistics landscape with ease. 
+                            Whether you are a small business or a large corporation, DashEx Logistics is your 
+                            trusted partner for seamless logistics solutions tailored to your specific 
+                            requirements. Trust us to handle your logistics while you focus on what matters 
+                            most – growing your business.
+                        </p>
+                    </div>
+                    {{-- img --}}
+                    <div class="w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
+                        <img src="{{ asset('img/black-mode.png') }}" alt="dark mode" />
+                    </div>
+                </div>
+            </section>
+            <!-- Section: Design Block -->
+        </div>
+        <!-- Container for contact form -->
     </section>
 
     {{-- yemi will do the contact us and download --}}
@@ -202,5 +335,16 @@
     <section></section>
     <section></section>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+    var logo = document.querySelector('.logo-header'),
+    blurredBird = document.querySelector('.back-bird'),
+    forebird = document.querySelector('.fore-bird');
 
+    window.addEventListener('scroll', function(){
+        var scrolled = window.scrolly;
+        logo.style.transform ="translate(0px,"+ scrolled/2 +"%)";
+        fore-bird.style.transform ="translate(0px,-"+ scrolled/40 +"%)";
+    })
+</script>
 </html>
