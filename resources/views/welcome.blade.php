@@ -185,13 +185,10 @@
                                         </div>
                                         <div class="ml-6 grow">
                                             <p class="mb-2 font-bold text-gray-50 ">
-                                                Technical support
+                                                Online support
                                             </p>
                                             <p class="text-neutral-100 ">
-                                                support@example.com
-                                            </p>
-                                            <p class="text-neutral-100 ">
-                                                +1 234-567-89
+                                                +234-7060443739
                                             </p>
                                         </div>
                                     </div>
@@ -214,10 +211,7 @@
                                                 Sales questions
                                             </p>
                                             <p class="text-neutral-100 ">
-                                                sales@example.com
-                                            </p>
-                                            <p class="text-neutral-100 ">
-                                                +1 234-567-89
+                                                +234-7060443739
                                             </p>
                                         </div>
                                     </div>
@@ -236,12 +230,9 @@
                                             </div>
                                         </div>
                                         <div class="ml-6 grow">
-                                            <p class="mb-2 font-bold text-gray-50 ">Press</p>
+                                            <p class="mb-2 font-bold text-gray-50 ">Coverage</p>
                                             <p class="text-neutral-100 ">
-                                                press@example.com
-                                            </p>
-                                            <p class="text-neutral-100 ">
-                                                +1 234-567-89
+                                                +234-7060443739
                                             </p>
                                         </div>
                                     </div>
@@ -260,12 +251,9 @@
                                             </div>
                                         </div>
                                         <div class="ml-6 grow">
-                                            <p class="mb-2 font-bold text-gray-50 ">Bug report</p>
+                                            <p class="mb-2 font-bold text-gray-50 ">Report a flaw</p>
                                             <p class="text-neutral-100 ">
-                                                bugs@example.com
-                                            </p>
-                                            <p class="text-neutral-100 ">
-                                                +1 234-567-89
+                                                +234-7060443739
                                             </p>
                                         </div>
                                     </div>
@@ -286,19 +274,16 @@
                     <div class="mb-10 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
                         <h2 class="mb-6 text-4xl font-bold text-gray-50">Contact us</h2>
                         <p class="mb-6 text-neutral-100">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Laudantium, modi accusantium ipsum corporis quia asperiores
-                            dolorem nisi corrupti eveniet dolores ad maiores repellendus enim
-                            autem omnis fugiat perspiciatis? Ad, veritatis.
+                            Got a question or need assistance with your delivery? We're here to help! Simply fill out the form below and our friendly team will get back to you as soon as possible. Your satisfaction is our priority!
                         </p>
                         <p class="mb-2 text-neutral-100">
-                            New York, 94126, United States
+                            Lagos State, 103227, Nigeria
                         </p>
                         <p class="mb-2 text-neutral-100">
-                            + 01 234 567 89
+                            +234-7060443739
                         </p>
                         <p class="mb-2 text-neutral-100">
-                            info@gmail.com
+                            sales@dashex.com.ng
                         </p>
                     </div>
                     {{-- form --}}
@@ -306,15 +291,15 @@
                         <form action="#" class="space-y-8">
                             <div>
                                 <label for="email" class="block mb-2 text-sm font-medium text-gray-100">Your email</label>
-                                <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-100 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" placeholder="name@flowbite.com" required>
+                                <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-100 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" placeholder="name@dashex.com" required>
                             </div>
                             <div>
                                 <label for="subject" class="block mb-2 text-sm font-medium text-gray-100 ">Subject</label>
-                                <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-100 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-yellow-500 focus:border-yellow-500dark:border-gray-600 " placeholder="Let us know how we can help you" required>
+                                <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-100 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-yellow-500 focus:border-yellow-500" placeholder="Let us know how we can help you" required>
                             </div>
                             <div class="sm:col-span-2">
                                 <label for="message" class="block mb-2 text-sm font-medium text-gray-100 ">Your message</label>
-                                <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-100 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-yellow-500 focus:border-yellow-500dark:border-gray-600 " placeholder="Leave a comment..."></textarea>
+                                <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-100 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-yellow-500 focus:border-yellow-500" placeholder="Leave a comment..."></textarea>
                             </div>
                             <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-yellow-700 sm:w-fit hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300">Send message</button>
                         </form>

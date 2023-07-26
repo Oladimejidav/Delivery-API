@@ -52,7 +52,19 @@ class PackageController extends Controller
 
     public function get_package($id)
     {
+        // users get their package alone
         $package = Package::find($id);
+        $data=[];
+
+        if (auth()->user()->role == 0) {
+            if ($package->customer_id == auth()->user()->id) {
+                $data= $package;
+            } else {
+                $data= [];
+            }
+        } else {
+            $data= $package;
+        }
 
         // Optionally, you can check if the item exists before proceeding.
         if (!$package) {
@@ -60,7 +72,7 @@ class PackageController extends Controller
         }
 
         // You can now use the $package object or return it as a response.
-        return response()->json($package);
+        return response()->json($data);
 
     }
 
@@ -69,7 +81,29 @@ class PackageController extends Controller
     {
         $package = Package::all();
 
+        if (auth()->user()->role == 0) {
+            $package = $package->where('customer_id', auth()->user()->id);
+        } else {
+            return $package;
+        }
+
         return response()->json($package);
+    }
+
+    public function update_isShipped(Request $request)
+    {
+        if (auth()->user()->role == 0) abort(403);
+        $package = Package::find($request->id);
+        $package->isShipped = $request->isShipped;
+        $package->update();
+    }
+
+    public function update_isAccepted(Request $request)
+    {
+        if (auth()->user()->role == 0) abort(403);
+        $package = Package::find($request->id);
+        $package->isAccepted = $request->isAccepted;
+        $package->update();
     }
 
 
