@@ -163,8 +163,8 @@
                     <a class="inline-flex items-center">
                       <img alt="testimonial" src="https://dummyimage.com/106x106" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
                       <span class="flex-grow flex flex-col pl-4">
-                        <span class="title-font font-medium text-gray-900">Holden Caulfield</span>
-                        <span class="text-gray-500 text-sm">UI DEVELOPER</span>
+                        <span class="title-font font-medium text-gray-900">Saidi Ugoma</span>
+                        <span class="text-gray-500 text-sm">Online Vendor</span>
                       </span>
                     </a>
                   </div>
@@ -177,8 +177,8 @@
                     <a class="inline-flex items-center">
                       <img alt="testimonial" src="https://dummyimage.com/107x107" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
                       <span class="flex-grow flex flex-col pl-4">
-                        <span class="title-font font-medium text-gray-900">Alper Kamu</span>
-                        <span class="text-gray-500 text-sm">DESIGNER</span>
+                        <span class="title-font font-medium text-gray-900">Alper Ventures</span>
+                        <span class="text-gray-500 text-sm">Fashion Designer</span>
                       </span>
                     </a>
                   </div>
