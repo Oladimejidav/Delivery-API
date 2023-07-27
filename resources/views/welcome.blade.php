@@ -100,7 +100,8 @@
             color: beige;
             text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
             margin-top: 5rem;
-            background-color: rgba(128, 128, 128, 0.5); /* 50% opacity gray color */
+            background-color: rgba(128, 128, 128, 0.5);
+            /* 50% opacity gray color */
             padding: 1rem;
             border-radius: 0.5rem;
         }
@@ -125,8 +126,10 @@
     <header class="header">
         <div class="back-bird"></div>
         <div class="w-full flex items-center justify-between">
-            {{-- <img src="{{ asset('img/logo.png') }}" class="logo-header" alt="hero" > --}}
-            <img src="{{ asset('logo.png') }}" class="cta" alt="logo" style="height: 10%; padding-left:3%; width: auto;">
+            <a href="tel:+2347060443739"
+                class="bg-yellow-600 rounded-sm cursor-pointer p-2 px-4 m-4 text-gray-50 font-semibold font-serif hover:text-gray-300"><span>CALL</span></a>
+            <img src="{{ asset('logo.png') }}" class="cta" alt="logo"
+                style="height: 10%; padding-left:3%; width: auto;">
         </div>
         <div class="centered">
             <div class="wrapper">
@@ -215,7 +218,7 @@
     </section>
     {{-- yemi will do the contact us and download --}}
     {{-- contact section --}}
-    <section class="py-14 bg-gray-400 rounded">
+    <section class="py-5 bg-gray-400 rounded">
         <!-- Container for contact form -->
         <div class="container my-10 mx-auto md:px-6 p-4 md:p-12">
             <h1 class="text-3xl md:text-5xl title-font text-gray-900 mb-12 text-center font-bold">
@@ -224,14 +227,25 @@
             <!-- Section: Design Block -->
             <section class="mb-12">
                 <div class="flex flex-wrap">
-                    <div class="mb-10 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
-                        <h2 class="mb-6 text-4xl font-bold text-gray-500 underline">We <span class="text-yellow-600">Deliver!</span></h2>
-                        <p class="mb-6 text-neutral-800">
-                            Got a question or need assistance with your delivery? We're here to help! Simply fill out
-                            the form below and our friendly team will get back to you as soon as possible. Your
-                            satisfaction is our priority!
+                    <div class="mb-4 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
+                        <h2 class="mb-6 text-4xl font-bold text-gray-500 underline">We <span
+                                class="text-yellow-600">Deliver!</span></h2>
+                        <p class="mb-6 text-neutral-800 font-mono font-bold">
+                            Welcome to DashEx™ - Your Trusted Delivery Partner!
+                            <br><br>
+                            Reliable, efficient, and tailored to your needs – that's our promise at DashEx™. For your deliveries, we've got you covered. Our experienced team ensures each
+                            delivery is handled with care and professionalism.
+                            <br><br>
+                            Need assistance or have questions? Our friendly support team is just a click away! Fill out
+                            the form, and we'll respond swiftly to address any queries.
+                            <br><br>
+                            Customer satisfaction is our top priority. Trust us for timely and intact deliveries, backed
+                            by a community of happy customers.
+                            <br><br>
+                            Choose DashEx™ for a hassle-free delivery experience. Let's embark on this journey together!
+                            Welcome aboard!
                         </p>
-                        <p class="mb-2 text-neutral-800">
+                        <p class="my-2 text-neutral-800">
                             Lagos State, 103227, Nigeria
                         </p>
                         <p class="mb-2 text-neutral-800">
@@ -242,7 +256,7 @@
                         </p>
                     </div>
                     {{-- form --}}
-                    <div class="mb-12 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
+                    <div class="mb-4 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
                         <form action="#" class="space-y-4">
                             <div>
                                 <label for="name" class="block text-base font-bold text-gray-900">Your
@@ -266,8 +280,7 @@
                                     placeholder="08034567890" required>
                             </div>
                             <div>
-                                <label for="subject"
-                                    class="block text-base font-bold text-gray-900 ">Subject</label>
+                                <label for="subject" class="block text-base font-bold text-gray-900 ">Subject</label>
                                 <input type="text" id="subject"
                                     class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded border border-gray-300 shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
                                     placeholder="Let us know how we can help you" required>
@@ -290,7 +303,7 @@
         </div>
         <!-- Container for contact form -->
         <!-- Container for contact us -->
-        <div class="container py-10 mx-auto md:px-6">
+        <div class="container py-5 mx-auto md:px-6">
             <!-- Section: Design Block -->
             <section>
                 <div
@@ -420,15 +433,8 @@
                         transpoted with ease, Dashex is the best logistics for all and beyong.</p>
                     <a href="#"
                         class="inline-flex items-center text-gray-50 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm py-2.5 text-center">
-                        
-        <img src="{{ asset('icon-google.png') }}" alt="logo" style="height:80px; width: auto; cursor:pointer; z-index:999">
-                        {{-- Download Now!
-                        <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg> --}}
+                        <img src="{{ asset('icon-google.png') }}" alt="logo"
+                            style="height:80px; width: auto; cursor:pointer; z-index:999">
                     </a>
                 </div>
             </div>
@@ -437,7 +443,21 @@
 
     {{-- mohammed to build the faq and footer. faq accordion.  --}}
     <section></section>
-    <section></section>
+    <footer class="p-4 md:p-8 lg:p-10 bg-gray-400">
+        <div class="mx-auto max-w-screen-xl text-center text-lg font-semibold">
+            <p class="my-6">DashEx Logistics : Block 233 Low Cost H/Estate Isolo-Lagos</p>
+            <ul class="flex flex-wrap justify-center items-center mb-6 text-gray-900">
+                <li>
+                    <a href="#" class="mr-4 hover:underline md:mr-6 ">Phone Number:(+234)7060443739</a>
+                </li>
+                <li>
+                    <a href="#" class="mr-4 hover:underline md:mr-6">Email: sales@dashex.com.ng</a>
+                </li>
+            </ul>
+            <span class="font-medium">© 2023-<span id="year"></span> <a href="#"
+                    class="hover:underline">DashEx™</a>. All Rights Reserved.</span>
+        </div>
+    </footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script>
@@ -451,5 +471,16 @@
         fore - bird.style.transform = "translate(0px,-" + scrolled / 40 + "%)";
     })
 </script>
+<script>
+    // Create a new Date object
+    const currentDate = new Date();
+
+    // Get the current year
+    const currentYear = currentDate.getFullYear();
+
+    // Update the 'year' element's content with the current year
+    document.getElementById('year').innerHTML = currentYear;
+</script>
+
 
 </html>
