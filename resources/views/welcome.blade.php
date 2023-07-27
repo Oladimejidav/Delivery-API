@@ -290,39 +290,48 @@
                         </p>
                     </div>
                     {{-- form --}}
-                    <div class="mb-4 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
-                        <form action="#" class="space-y-4">
+                    <div class="mb-4 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">  
+                        @if(Session::has('success'))
+                        <div class="alert alert-success">
+                            {{ Session::get('success') }}
+                            @php
+                                Session::forget('success');
+                            @endphp
+                        </div>
+                        @endif               
+                        <form class="space-y-4" method="POST" action="{{ route('contact-form.store') }}">
+                            @csrf
                             <div>
                                 <label for="name" class="block text-base font-bold text-gray-900">Your
                                     name</label>
-                                <input type="text" id="name"
+                                <input type="text" id="name" name="name"
                                     class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5"
                                     placeholder="Oludare Walliams" required>
                             </div>
                             <div>
                                 <label for="email" class="block text-base font-bold text-gray-900">Your
                                     email</label>
-                                <input type="email" id="email"
+                                <input type="email" id="email" name="email"
                                     class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5"
                                     placeholder="name@dashex.com" required>
                             </div>
                             <div>
                                 <label for="number" class="block text-base font-bold text-gray-900">Phone
                                     number</label>
-                                <input type="number" id="number"
+                                <input type="number" id="number" name="phone"
                                     class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5"
                                     placeholder="08034567890" required>
                             </div>
                             <div>
                                 <label for="subject" class="block text-base font-bold text-gray-900 ">Subject</label>
-                                <input type="text" id="subject"
+                                <input type="text" id="subject" name="subject"
                                     class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded border border-gray-300 shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
                                     placeholder="Let us know how we can help you" required>
                             </div>
                             <div class="sm:col-span-2">
                                 <label for="message" class="block text-base font-bold text-gray-900 ">Your
                                     message</label>
-                                <textarea id="message" rows="6"
+                                <textarea id="message" rows="6" name="message"
                                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded shadow-sm border border-gray-300 focus:ring-yellow-500 focus:border-yellow-500"
                                     placeholder="Leave a comment..."></textarea>
                             </div>
