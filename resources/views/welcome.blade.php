@@ -97,13 +97,19 @@
             font-family: monospace;
             font-size: 4rem;
             font-weight: 700;
-            color: beige;
+            color: #fe5306;
             text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
             margin-top: 5rem;
-            background-color: rgba(128, 128, 128, 0.5);
+            background-color: rgb(26, 38, 54, 0.8);
             /* 50% opacity gray color */
             padding: 1rem;
             border-radius: 0.5rem;
+            animation: blink-animation 1s infinite !important;
+        }
+        @keyframes blink-animation{
+            0%(opacity: 1;)
+            50%(opacity: 0;)
+            100%(opacity:1;)
         }
 
         @keyframes typing {
@@ -142,10 +148,10 @@
                 font-family: monospace;
                 font-size: 2rem;
                 font-weight: 700;
-                color: beige;
+                color: #fe5306;
                 text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
                 margin-top: 5rem;
-                background-color: rgba(128, 128, 128, 0.5);
+                background-color: rgb(26, 38, 54, 0.8);
                 /* 50% opacity gray color */
                 padding: 1rem;
                 border-radius: 0.5rem;
@@ -161,13 +167,13 @@
         <div class="back-bird"></div>
         <div class="w-full flex items-center justify-between">
             <a href="tel:+2347060443739"
-                class="bg-yellow-600 rounded-sm z-50 cursor-pointer py-5 px-8 m-4 text-gray-50 font-semibold font-serif hover:text-gray-300 text-center md:text-left mx-auto md:mx-4"><span>Call for your next delivery!</span></a>
- <img src="{{ asset('logo.png') }}" class="cta" alt="logo"
+                class="bg-[#FE5306] rounded-sm z-50 cursor-pointer py-5 px-8 m-4 text-gray-50 font-semibold font-serif hover:text-gray-300 text-center md:text-left mx-auto md:mx-4"><span>Call for your next delivery!</span></a>
+                <img src="{{ asset('img/logo.png') }}" class="cta" alt="logo"
                 style="height: 10%; padding-left:3%; width: auto;">
         </div>
         <div class="centered">
             <div class="wrapper">
-                <h1 class="typing-demo">
+                <h1 class="typing-demo animate-pulse">
                     We Are Local In the state of Lagos
                 </h1>
             </div>
@@ -252,7 +258,7 @@
     </section>
     {{-- yemi will do the contact us and download --}}
     {{-- contact section --}}
-    <section class="py-5 bg-gray-400 rounded">
+    <section class="py-5 bg-gray-200 rounded">
         <!-- Container for contact form -->
         <div class="container my-10 mx-auto md:px-6 p-4 md:p-12">
             <h1 class="text-3xl md:text-5xl title-font text-gray-900 mb-12 text-center font-bold">
@@ -262,9 +268,9 @@
             <section class="mb-12">
                 <div class="flex flex-wrap">
                     <div class="mb-4 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
-                        <h2 class="mb-6 text-4xl font-bold text-gray-500 underline">We <span
-                                class="text-yellow-600">Deliver!</span></h2>
-                        <p class="mb-6 text-neutral-800 font-mono font-bold">
+                        <h2 class="mb-6 text-4xl font-bold text-orange-600 underline">We <span
+                                class="text-orange-600">Deliver!</span></h2>
+                        <p class="mb-6 text-gray-900 font-mono text-xl font-bold">
                             Welcome to DashEx™ - Your Trusted Delivery Partner!
                             <br><br>
                             Reliable, efficient, and tailored to your needs – that's our promise at DashEx™. For your deliveries, we've got you covered. Our experienced team ensures each
@@ -278,15 +284,6 @@
                             <br><br>
                             Choose DashEx™ for a hassle-free delivery experience. Let's embark on this journey together!
                             Welcome aboard!
-                        </p>
-                        <p class="my-2 text-neutral-800">
-                            Lagos State, 103227, Nigeria
-                        </p>
-                        <p class="mb-2 text-neutral-800">
-                            +234-7060443739
-                        </p>
-                        <p class="mb-2 text-neutral-800">
-                            sales@dashex.com.ng
                         </p>
                     </div>
                     {{-- form --}}
@@ -336,7 +333,7 @@
                                     placeholder="Leave a comment..."></textarea>
                             </div>
                             <button type="submit"
-                                class="py-3 px-5 text-sm font-medium text-center text-gray-50 rounded bg-yellow-700 sm:w-fit hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300">Send
+                                class="py-3 px-5 text-sm font-medium text-center text-gray-50 rounded bg-orange-700 sm:w-fit hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-yellow-300">Send
                                 message</button>
                         </form>
                     </div>
@@ -351,8 +348,8 @@
             <section>
                 <div
                     class="block rounded-lg bg-gray-50 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
-                    <div class="flex flex-wrap items-center">
-                        <div class="block w-full shrink-0 grow-0 basis-auto lg:flex lg:w-6/12 xl:w-4/12">
+                    <div class="flex flex-wrap items-center flex-col-reverse md:p-12">
+                        <div class="block w-full shrink-0 grow-0 basis-auto lg:flex">
                             <div class="h-[500px] w-full">
                                 <iframe
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253682.46310705255!2d3.1191421092523086!3d6.548369372208267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sLagos!5e0!3m2!1sen!2sng!4v1690274857100!5m2!1sen!2sng"
@@ -380,7 +377,7 @@
                                                 Online support
                                             </p>
                                             <p class="text-neutral-800 ">
-                                                +234-7060443739
+                                                sales@dashex.com.ng
                                             </p>
                                         </div>
                                     </div>
@@ -408,7 +405,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div
+                                {{-- <div
                                     class="mb-12 w-full shrink-0 grow-0 basis-auto px-3 md:w-6/12 md:px-6 lg:w-full xl:mb-0 xl:w-6/12 xl:px-12">
                                     <div class="align-start flex">
                                         <div class="shrink-0">
@@ -428,8 +425,8 @@
                                             </p>
                                         </div>
                                     </div>
-                                </div>
-                                <div
+                                </div> --}}
+                                {{-- <div
                                     class="w-full shrink-0 grow-0 basis-auto px-3 md:w-6/12 md:px-6 lg:w-full xl:w-6/12 xl:px-12">
                                     <div class="align-start flex">
                                         <div class="shrink-0">
@@ -449,7 +446,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -486,18 +483,18 @@
 
     {{-- mohammed to build the faq and footer. faq accordion.  --}}
     <section></section>
-    <footer class="p-4 md:p-8 lg:p-10 bg-gray-400">
+    <footer class="p-4 md:p-8 lg:p-10 bg-gray-800 text-gray-50">
         <div class="mx-auto max-w-screen-xl text-center text-lg font-semibold">
             <p class="my-6">DashEx Logistics : Block 233 Low Cost H/Estate Isolo-Lagos</p>
-            <ul class="flex flex-wrap justify-center items-center mb-6 text-gray-900">
+            <ul class="flex flex-wrap justify-center items-center mb-6  text-gray-50">
                 <li>
-                    <a href="#" class="mr-4 hover:underline md:mr-6 ">Phone Number:(+234)7060443739</a>
+                    <a href="#" class="mr-4 hover:underline md:mr-6">Phone Number:(+234)7060443739</a>
                 </li>
                 <li>
                     <a href="#" class="mr-4 hover:underline md:mr-6">Email: sales@dashex.com.ng</a>
                 </li>
             </ul>
-            <span class="font-medium">© 2023-<span id="year"></span> <a href="#"
+            <span class="font-medium">© <span id="year"></span> <a href="#"
                     class="hover:underline">DashEx™</a>. All Rights Reserved.</span>
         </div>
     </footer>
