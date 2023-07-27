@@ -103,7 +103,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-900">
+<body class="bg-gray-50">
     {{-- david will do the hero section and the testimonial --}}
     {{-- hero section --}}
     <header class="header">
@@ -127,8 +127,8 @@
             <section class="content mb-12">
                 <div class="flex flex-wrap">
                     <div class="mb-10 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
-                        <h2 class="mb-6 text-4xl font-bold text-gray-50">Welcome to DashEx!</h2>
-                        <p class="mb-6 text-neutral-100">
+                        <h2 class="mb-6 text-4xl font-bold text-gray-900">Welcome to DashEx!</h2>
+                        <p class="mb-6 text-neutral-600">
                             We are a dynamic and innovative logistics company dedicated 
                             to providing top-notch services to our clients. With over one decade of industry 
                             experience, our team excels in delivering efficient and reliable solutions for 
@@ -155,13 +155,56 @@
 
     {{-- yemi will do the contact us and download --}}
     {{-- contact section --}}
-    <section class="mb-32 bg-gray-800">
+    <section class="mb-32 py-8 bg-gray-100 rounded">
+        <!-- Container for contact form -->
+        <div class="container my-10 mx-auto md:px-6 p-4 md:p-12">
+            <!-- Section: Design Block -->
+            <section class="mb-12">
+                <div class="flex flex-wrap">
+                    <div class="mb-10 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
+                        <h2 class="mb-6 text-4xl font-bold text-gray-900">Contact us</h2>
+                        <p class="mb-6 text-neutral-800">
+                            Got a question or need assistance with your delivery? We're here to help! Simply fill out the form below and our friendly team will get back to you as soon as possible. Your satisfaction is our priority!
+                        </p>
+                        <p class="mb-2 text-neutral-800">
+                            Lagos State, 103227, Nigeria
+                        </p>
+                        <p class="mb-2 text-neutral-800">
+                            +234-7060443739
+                        </p>
+                        <p class="mb-2 text-neutral-800">
+                            sales@dashex.com.ng
+                        </p>
+                    </div>
+                    {{-- form --}}
+                    <div class="mb-12 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
+                        <form action="#" class="space-y-8">
+                            <div>
+                                <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your email</label>
+                                <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" placeholder="name@dashex.com" required>
+                            </div>
+                            <div>
+                                <label for="subject" class="block mb-2 text-sm font-medium text-gray-900 ">Subject</label>
+                                <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-yellow-500 focus:border-yellow-500" placeholder="Let us know how we can help you" required>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label for="message" class="block mb-2 text-sm font-medium text-gray-900 ">Your message</label>
+                                <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-yellow-500 focus:border-yellow-500" placeholder="Leave a comment..."></textarea>
+                            </div>
+                            <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-gray-50 rounded-lg bg-yellow-700 sm:w-fit hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300">Send message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <!-- Section: Design Block -->
+        </div>
+        <!-- Container for contact form -->
         <!-- Container for contact us -->
         <div class="container my-10 mx-auto md:px-6">
             <!-- Section: Design Block -->
             <section>
                 <div
-                    class="block rounded-lg bg-gray-800 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+                    class="block rounded-lg bg-gray-50 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
                     <div class="flex flex-wrap items-center">
                         <div class="block w-full shrink-0 grow-0 basis-auto lg:flex lg:w-6/12 xl:w-4/12">
                             <div class="h-[500px] w-full">
@@ -171,7 +214,7 @@
                                     frameborder="0" allowfullscreen></iframe>
                             </div>
                         </div>
-                        <div class="w-full shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12 bg-gray-800">
+                        <div class="w-full shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12 bg-gray-50">
                             <div class="flex flex-wrap px-3 pt-12 pb-12 md:pb-0 lg:pt-0">
                                 <div
                                     class="mb-12 w-full shrink-0 grow-0 basis-auto px-3 md:w-6/12 md:px-6 lg:w-full xl:w-6/12 xl:px-12">
@@ -187,10 +230,10 @@
                                             </div>
                                         </div>
                                         <div class="ml-6 grow">
-                                            <p class="mb-2 font-bold text-gray-50 ">
+                                            <p class="mb-2 font-bold text-gray-900 ">
                                                 Online support
                                             </p>
-                                            <p class="text-neutral-100 ">
+                                            <p class="text-neutral-800 ">
                                                 +234-7060443739
                                             </p>
                                         </div>
@@ -210,10 +253,10 @@
                                             </div>
                                         </div>
                                         <div class="ml-6 grow">
-                                            <p class="mb-2 font-bold text-gray-50 ">
+                                            <p class="mb-2 font-bold text-gray-900 ">
                                                 Sales questions
                                             </p>
-                                            <p class="text-neutral-100 ">
+                                            <p class="text-neutral-800 ">
                                                 +234-7060443739
                                             </p>
                                         </div>
@@ -233,8 +276,8 @@
                                             </div>
                                         </div>
                                         <div class="ml-6 grow">
-                                            <p class="mb-2 font-bold text-gray-50 ">Coverage</p>
-                                            <p class="text-neutral-100 ">
+                                            <p class="mb-2 font-bold text-gray-900 ">Coverage</p>
+                                            <p class="text-neutral-800 ">
                                                 +234-7060443739
                                             </p>
                                         </div>
@@ -254,8 +297,8 @@
                                             </div>
                                         </div>
                                         <div class="ml-6 grow">
-                                            <p class="mb-2 font-bold text-gray-50 ">Report a flaw</p>
-                                            <p class="text-neutral-100 ">
+                                            <p class="mb-2 font-bold text-gray-900 ">Report a flaw</p>
+                                            <p class="text-neutral-800 ">
                                                 +234-7060443739
                                             </p>
                                         </div>
@@ -269,60 +312,17 @@
             <!-- Section: Design Block -->
         </div>
         <!-- Container for contact us -->
-        <!-- Container for contact form -->
-        <div class="container my-10 mx-auto md:px-6 bg-gray-800 rounded p-4 md:p-12">
-            <!-- Section: Design Block -->
-            <section class="mb-12">
-                <div class="flex flex-wrap">
-                    <div class="mb-10 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
-                        <h2 class="mb-6 text-4xl font-bold text-gray-50">Contact us</h2>
-                        <p class="mb-6 text-neutral-100">
-                            Got a question or need assistance with your delivery? We're here to help! Simply fill out the form below and our friendly team will get back to you as soon as possible. Your satisfaction is our priority!
-                        </p>
-                        <p class="mb-2 text-neutral-100">
-                            Lagos State, 103227, Nigeria
-                        </p>
-                        <p class="mb-2 text-neutral-100">
-                            +234-7060443739
-                        </p>
-                        <p class="mb-2 text-neutral-100">
-                            sales@dashex.com.ng
-                        </p>
-                    </div>
-                    {{-- form --}}
-                    <div class="mb-12 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
-                        <form action="#" class="space-y-8">
-                            <div>
-                                <label for="email" class="block mb-2 text-sm font-medium text-gray-100">Your email</label>
-                                <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-100 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" placeholder="name@dashex.com" required>
-                            </div>
-                            <div>
-                                <label for="subject" class="block mb-2 text-sm font-medium text-gray-100 ">Subject</label>
-                                <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-100 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-yellow-500 focus:border-yellow-500" placeholder="Let us know how we can help you" required>
-                            </div>
-                            <div class="sm:col-span-2">
-                                <label for="message" class="block mb-2 text-sm font-medium text-gray-100 ">Your message</label>
-                                <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-100 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-yellow-500 focus:border-yellow-500" placeholder="Leave a comment..."></textarea>
-                            </div>
-                            <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-yellow-700 sm:w-fit hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300">Send message</button>
-                        </form>
-                    </div>
-                </div>
-            </section>
-            <!-- Section: Design Block -->
-        </div>
-        <!-- Container for contact form -->
     </section>
 
     {{-- CTA section --}}
     <section>
-        <section class="bg-gray-800">
+        <section class="bg-gray-100">
             <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
                 <img class="w-full rounded-md" src="https://www.investsmall.co/wp-content/uploads/2021/06/logistics-company-in-nigeria-1.jpg" alt="download image">
                 <div class="mt-4 md:mt-0">
-                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">Connecting People around the globe!</h2>
-                    <p class="mb-6 font-light text-gray-300 md:text-lg">Dashex is your most trusted and reliable delivery platform, connecting your needs to your audience, making sure your businesses are transpoted with ease, Dashex is the best logistics for all and beyong.</p>
-                    <a href="#" class="inline-flex items-center text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Connecting People around the globe!</h2>
+                    <p class="mb-6 font-light text-gray-700 md:text-lg">Dashex is your most trusted and reliable delivery platform, connecting your needs to your audience, making sure your businesses are transpoted with ease, Dashex is the best logistics for all and beyong.</p>
+                    <a href="#" class="inline-flex items-center text-gray-50 bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                         Download Now!
                         <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </a>
