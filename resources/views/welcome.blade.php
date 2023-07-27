@@ -50,10 +50,10 @@
         }
         header .fore-bird{
             position: absolute;
-            top: 199px;
+            top: 40%;
             right: 37%;
-            width: 795px;
-            height: 800px;
+            width: 40%;
+            height: 100%;
             background-image: url("{{ asset('img/white-mode.png') }}");
             background-repeat: no-repeat;
             background-position: right bottom;
@@ -119,12 +119,11 @@
         </div>
         <div class="fore-bird"></div>
     </header>
-    {{-- intro section --}}
-    <section>
-        <!-- Container for intro-->
-        <div class="container mx-auto md:px-6 rounded p-4 md:p-12">
+    </section>
+    <section class="bg-white">
+        <div class="container mx-auto md:px-6 bg-white rounded p-4 md:p-12">
             <!-- Section: Design Block -->
-            <section class="content mb-12">
+            <section>
                 <div class="flex flex-wrap">
                     <div class="mb-10 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
                         <h2 class="mb-6 text-4xl font-bold text-gray-900">Welcome to DashEx!</h2>
@@ -142,17 +141,52 @@
                             most – growing your business.
                         </p>
                     </div>
-                    {{-- img --}}
-                    <div class="w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
+                    {{-- form --}}
+                    <div class="w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-1/4 md:px-3 lg:px-6">                        
                         <img src="{{ asset('img/black-mode.png') }}" alt="dark mode" />
                     </div>
                 </div>
             </section>
             <!-- Section: Design Block -->
         </div>
-        <!-- Container for contact form -->
     </section>
-
+    <section>
+        <section class="text-gray-600 body-font">
+            <div class="container px-5 py-24 mx-auto">
+              <h1 class="text-3xl font-medium title-font text-white mb-12 text-center">Testimonials</h1>
+              <div class="flex flex-wrap -m-4">
+                <div class="p-4 md:w-1/2 w-full">
+                  <div class="h-full bg-gray-100 p-8 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036"></svg>
+                    <p  class="leading-relaxed mb-6 text-2xl">Flawless Delivery Service!</p>
+                    <p class="leading-relaxed mb-6">I'm thrilled with the exceptional service provided by Dashex Logistics. From start to finish, everything was smooth and efficient. My package arrived ahead of schedule, and the handling was impeccable. Highly recommend!</p>
+                    <a class="inline-flex items-center">
+                      <img alt="testimonial" src="https://dummyimage.com/106x106" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+                      <span class="flex-grow flex flex-col pl-4">
+                        <span class="title-font font-medium text-gray-900">Holden Caulfield</span>
+                        <span class="text-gray-500 text-sm">UI DEVELOPER</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                <div class="p-4 md:w-1/2 w-full">
+                  <div class="h-full bg-gray-100 p-8 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036"></svg>
+                    <p  class="leading-relaxed mb-6 text-2xl">Reliable and Fast Delivery!</p>
+                    <p class="leading-relaxed mb-6">I'm incredibly impressed with Dashex Logistics. They delivered my package on time, and their attention to detail ensured it arrived in perfect condition. I'll be using their services again without a doubt!</p>
+                    <a class="inline-flex items-center">
+                      <img alt="testimonial" src="https://dummyimage.com/107x107" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+                      <span class="flex-grow flex flex-col pl-4">
+                        <span class="title-font font-medium text-gray-900">Alper Kamu</span>
+                        <span class="text-gray-500 text-sm">DESIGNER</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>          
+    </section>
     {{-- yemi will do the contact us and download --}}
     {{-- contact section --}}
     <section class="mb-32 py-8 bg-gray-100 rounded">
