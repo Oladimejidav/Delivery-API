@@ -12,43 +12,48 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        body{
+
+        body {
             height: 2000px;
             font-family: sans-serif;
         }
-        .header{
+
+        .header {
             position: relative;
             height: 100vh;
-            background: url("{{asset('img/background.jpg')}}") no-repeat center center;
+            background: url("{{ asset('img/background.jpg') }}") no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
             overflow: hidden;
             overflow-y: revert;
             perspective: 10px;
         }
-        header::-webkit-scrollbar{
+
+        header::-webkit-scrollbar {
             display: none;
         }
-        header .logo-header{
+
+        header .logo-header {
             position: absolute;
             top: 4%;
             left: 0;
             right: 0;
             display: block;
         }
-        header .cta{
+
+        header .cta {
             position: absolute;
             top: 4%;
-            left: 0;
-            right: 0;
+            right: 2%;
             display: block;
 
         }
-        header .fore-bird{
+
+        header .fore-bird {
             position: absolute;
             top: 40%;
             right: 37%;
@@ -59,11 +64,13 @@
             background-position: right bottom;
             z-index: 1;
         }
-        .content{
+
+        .content {
             max-width: 1140px;
             margin: 0 auto;
             font-size: 20px;
         }
+
         .centered {
             position: absolute;
             top: 30%;
@@ -74,6 +81,7 @@
             font-weight: bold;
             font-family: "Lucida Console";
         }
+
         .wrapper {
             height: 100vh;
             display: grid;
@@ -81,13 +89,20 @@
         }
 
         .typing-demo {
-            width: 34ch;
+            width: 35ch;
             animation: typing 2s steps(12), blink .5s step-end infinite alternate;
-            white-space: nowrap;
+            white-space: wrap;
             overflow: hidden;
             border-right: 3px solid;
             font-family: monospace;
-            font-size: 3rem;
+            font-size: 4rem;
+            font-weight: 700;
+            color: beige;
+            text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
+            margin-top: 5rem;
+            background-color: rgba(128, 128, 128, 0.5); /* 50% opacity gray color */
+            padding: 1rem;
+            border-radius: 0.5rem;
         }
 
         @keyframes typing {
@@ -103,46 +118,48 @@
         }
     </style>
 </head>
-<body class="bg-gray-50">
+
+<body class="bg-gray-300">
     {{-- david will do the hero section and the testimonial --}}
     {{-- hero section --}}
     <header class="header">
         <div class="back-bird"></div>
-        <img src="{{asset('img/logo.png')}}" class="logo-header" alt="logo" style="height: 10%; padding-left:3%; width: auto;">
-        {{-- <a href="">CTA</a> --}}        
+        <div class="w-full flex items-center justify-between">
+            {{-- <img src="{{ asset('img/logo.png') }}" class="logo-header" alt="hero" > --}}
+            <img src="{{ asset('logo.png') }}" class="cta" alt="logo" style="height: 10%; padding-left:3%; width: auto;">
+        </div>
         <div class="centered">
             <div class="wrapper">
                 <h1 class="typing-demo">
-                    We Are Local In the state of Lagos 
+                    We Are Local In the state of Lagos
                 </h1>
-              </div>
+            </div>
         </div>
         <div class="fore-bird"></div>
     </header>
-    </section>
     <section class="bg-white">
         <div class="container mx-auto md:px-6 bg-white rounded p-4 md:p-12">
             <!-- Section: Design Block -->
             <section>
-                <div class="flex flex-wrap">
-                    <div class="mb-10 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
-                        <h2 class="mb-6 text-4xl font-bold text-gray-900">Welcome to DashEx!</h2>
-                        <p class="mb-6 text-neutral-600">
-                            We are a dynamic and innovative logistics company dedicated 
-                            to providing top-notch services to our clients. With over one decade of industry 
-                            experience, our team excels in delivering efficient and reliable solutions for 
-                            all your supply chain needs. From handling intricate international shipments to 
-                            streamlining local deliveries, we pride ourselves on our commitment to customer 
-                            satisfaction. Our state-of-the-art technologies, coupled with our expert staff, 
-                            enable us to navigate the complexities of the logistics landscape with ease. 
-                            Whether you are a small business or a large corporation, DashEx Logistics is your 
-                            trusted partner for seamless logistics solutions tailored to your specific 
-                            requirements. Trust us to handle your logistics while you focus on what matters 
+                <div class="flex flex-wrap items-center">
+                    <div class="mb-10 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-4/6 md:px-3 lg:px-6">
+                        <h2 class="mb-12 text-4xl font-extrabold text-gray-900">Welcome to DashEx!</h2>
+                        <p class="mt-12 text-neutral-600">
+                            We are a dynamic and innovative logistics company dedicated
+                            to providing top-notch services to our clients. With over one decade of industry
+                            experience, our team excels in delivering efficient and reliable solutions for
+                            all your supply chain needs. From handling intricate international shipments to
+                            streamlining local deliveries, we pride ourselves on our commitment to customer
+                            satisfaction. Our state-of-the-art technologies, coupled with our expert staff,
+                            enable us to navigate the complexities of the logistics landscape with ease.
+                            Whether you are a small business or a large corporation, DashEx Logistics is your
+                            trusted partner for seamless logistics solutions tailored to your specific
+                            requirements. Trust us to handle your logistics while you focus on what matters
                             most – growing your business.
                         </p>
                     </div>
                     {{-- form --}}
-                    <div class="w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-1/4 md:px-3 lg:px-6">                        
+                    <div class="w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-2/6 md:px-3 lg:px-6">
                         <img src="{{ asset('img/black-mode.png') }}" alt="dark mode" />
                     </div>
                 </div>
@@ -153,52 +170,66 @@
     <section>
         <section class="text-gray-600 body-font">
             <div class="container px-5 py-24 mx-auto">
-              <h1 class="text-3xl font-medium title-font text-white mb-12 text-center">Testimonials</h1>
-              <div class="flex flex-wrap -m-4">
-                <div class="p-4 md:w-1/2 w-full">
-                  <div class="h-full bg-gray-100 p-8 rounded">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036"></svg>
-                    <p  class="leading-relaxed mb-6 text-2xl">Flawless Delivery Service!</p>
-                    <p class="leading-relaxed mb-6">I'm thrilled with the exceptional service provided by Dashex Logistics. From start to finish, everything was smooth and efficient. My package arrived ahead of schedule, and the handling was impeccable. Highly recommend!</p>
-                    <a class="inline-flex items-center">
-                      <img alt="testimonial" src="https://dummyimage.com/106x106" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
-                      <span class="flex-grow flex flex-col pl-4">
-                        <span class="title-font font-medium text-gray-900">Saidi Ugoma</span>
-                        <span class="text-gray-500 text-sm">Online Vendor</span>
-                      </span>
-                    </a>
-                  </div>
+                <h1 class="text-3xl title-font text-gray-900 mb-12 text-center font-extrabold">What Our Satisfied
+                    Customers Says!</h1>
+                <div class="flex flex-wrap -m-4">
+                    <div class="p-4 md:w-1/2 w-full">
+                        <div class="h-full bg-gray-100 p-8 rounded-md hover:bg-gray-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                class="block w-5 h-5 text-gray-900 mb-4" viewBox="0 0 975.036 975.036"></svg>
+                            <p class="leading-relaxed mb-6 text-2xl">Flawless Delivery Service!</p>
+                            <p class="leading-relaxed mb-6">I'm thrilled with the exceptional service provided by Dashex
+                                Logistics. From start to finish, everything was smooth and efficient. My package arrived
+                                ahead of schedule, and the handling was impeccable. Highly recommend!</p>
+                            <a class="inline-flex items-center">
+                                <img alt="testimonial" src="https://dummyimage.com/106x106"
+                                    class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+                                <span class="flex-grow flex flex-col pl-4">
+                                    <span class="title-font font-medium text-gray-900">Saidi Ugoma</span>
+                                    <span class="text-gray-500 text-sm">Online Vendor</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-4 md:w-1/2 w-full">
+                        <div class="h-full bg-gray-100 p-8 rounded-md hover:bg-gray-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                class="block w-5 h-5 text-gray-900 mb-4" viewBox="0 0 975.036 975.036"></svg>
+                            <p class="leading-relaxed mb-6 text-2xl">Reliable and Fast Delivery!</p>
+                            <p class="leading-relaxed mb-6">I'm incredibly impressed with Dashex Logistics. They
+                                delivered my package on time, and their attention to detail ensured it arrived in
+                                perfect condition. I'll be using their services again without a doubt!</p>
+                            <a class="inline-flex items-center">
+                                <img alt="testimonial" src="https://dummyimage.com/107x107"
+                                    class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+                                <span class="flex-grow flex flex-col pl-4">
+                                    <span class="title-font font-medium text-gray-900">Alper Ventures</span>
+                                    <span class="text-gray-500 text-sm">Fashion Designer</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="p-4 md:w-1/2 w-full">
-                  <div class="h-full bg-gray-100 p-8 rounded">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036"></svg>
-                    <p  class="leading-relaxed mb-6 text-2xl">Reliable and Fast Delivery!</p>
-                    <p class="leading-relaxed mb-6">I'm incredibly impressed with Dashex Logistics. They delivered my package on time, and their attention to detail ensured it arrived in perfect condition. I'll be using their services again without a doubt!</p>
-                    <a class="inline-flex items-center">
-                      <img alt="testimonial" src="https://dummyimage.com/107x107" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
-                      <span class="flex-grow flex flex-col pl-4">
-                        <span class="title-font font-medium text-gray-900">Alper Ventures</span>
-                        <span class="text-gray-500 text-sm">Fashion Designer</span>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
             </div>
-          </section>          
+        </section>
     </section>
     {{-- yemi will do the contact us and download --}}
     {{-- contact section --}}
-    <section class="mb-32 py-8 bg-gray-100 rounded">
+    <section class="py-14 bg-gray-400 rounded">
         <!-- Container for contact form -->
         <div class="container my-10 mx-auto md:px-6 p-4 md:p-12">
+            <h1 class="text-3xl md:text-5xl title-font text-gray-900 mb-12 text-center font-bold">
+                Contact Us Now For Your Next Service.
+            </h1>
             <!-- Section: Design Block -->
             <section class="mb-12">
                 <div class="flex flex-wrap">
                     <div class="mb-10 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
-                        <h2 class="mb-6 text-4xl font-bold text-gray-900">Contact us</h2>
+                        <h2 class="mb-6 text-4xl font-bold text-gray-500 underline">We <span class="text-yellow-600">Deliver!</span></h2>
                         <p class="mb-6 text-neutral-800">
-                            Got a question or need assistance with your delivery? We're here to help! Simply fill out the form below and our friendly team will get back to you as soon as possible. Your satisfaction is our priority!
+                            Got a question or need assistance with your delivery? We're here to help! Simply fill out
+                            the form below and our friendly team will get back to you as soon as possible. Your
+                            satisfaction is our priority!
                         </p>
                         <p class="mb-2 text-neutral-800">
                             Lagos State, 103227, Nigeria
@@ -212,20 +243,45 @@
                     </div>
                     {{-- form --}}
                     <div class="mb-12 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
-                        <form action="#" class="space-y-8">
+                        <form action="#" class="space-y-4">
                             <div>
-                                <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your email</label>
-                                <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" placeholder="name@dashex.com" required>
+                                <label for="name" class="block text-base font-bold text-gray-900">Your
+                                    name</label>
+                                <input type="text" id="name"
+                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5"
+                                    placeholder="Oludare Walliams" required>
                             </div>
                             <div>
-                                <label for="subject" class="block mb-2 text-sm font-medium text-gray-900 ">Subject</label>
-                                <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-yellow-500 focus:border-yellow-500" placeholder="Let us know how we can help you" required>
+                                <label for="email" class="block text-base font-bold text-gray-900">Your
+                                    email</label>
+                                <input type="email" id="email"
+                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5"
+                                    placeholder="name@dashex.com" required>
+                            </div>
+                            <div>
+                                <label for="number" class="block text-base font-bold text-gray-900">Phone
+                                    number</label>
+                                <input type="number" id="number"
+                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5"
+                                    placeholder="08034567890" required>
+                            </div>
+                            <div>
+                                <label for="subject"
+                                    class="block text-base font-bold text-gray-900 ">Subject</label>
+                                <input type="text" id="subject"
+                                    class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded border border-gray-300 shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+                                    placeholder="Let us know how we can help you" required>
                             </div>
                             <div class="sm:col-span-2">
-                                <label for="message" class="block mb-2 text-sm font-medium text-gray-900 ">Your message</label>
-                                <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-yellow-500 focus:border-yellow-500" placeholder="Leave a comment..."></textarea>
+                                <label for="message" class="block text-base font-bold text-gray-900 ">Your
+                                    message</label>
+                                <textarea id="message" rows="6"
+                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded shadow-sm border border-gray-300 focus:ring-yellow-500 focus:border-yellow-500"
+                                    placeholder="Leave a comment..."></textarea>
                             </div>
-                            <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-gray-50 rounded-lg bg-yellow-700 sm:w-fit hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300">Send message</button>
+                            <button type="submit"
+                                class="py-3 px-5 text-sm font-medium text-center text-gray-50 rounded bg-yellow-700 sm:w-fit hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300">Send
+                                message</button>
                         </form>
                     </div>
                 </div>
@@ -234,7 +290,7 @@
         </div>
         <!-- Container for contact form -->
         <!-- Container for contact us -->
-        <div class="container my-10 mx-auto md:px-6">
+        <div class="container py-10 mx-auto md:px-6">
             <!-- Section: Design Block -->
             <section>
                 <div
@@ -350,15 +406,29 @@
 
     {{-- CTA section --}}
     <section>
-        <section class="bg-gray-100">
-            <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-                <img class="w-full rounded-md" src="https://www.investsmall.co/wp-content/uploads/2021/06/logistics-company-in-nigeria-1.jpg" alt="download image">
+        <section class="bg-gray-300">
+            <div
+                class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+                <img class="w-full rounded-md"
+                    src="https://www.investsmall.co/wp-content/uploads/2021/06/logistics-company-in-nigeria-1.jpg"
+                    alt="download image">
                 <div class="mt-4 md:mt-0">
-                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Connecting People around the globe!</h2>
-                    <p class="mb-6 font-light text-gray-700 md:text-lg">Dashex is your most trusted and reliable delivery platform, connecting your needs to your audience, making sure your businesses are transpoted with ease, Dashex is the best logistics for all and beyong.</p>
-                    <a href="#" class="inline-flex items-center text-gray-50 bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                        Download Now!
-                        <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Connecting People around the
+                        globe!</h2>
+                    <p class="mb-6 font-light text-gray-700 md:text-lg">Dashex is your most trusted and reliable
+                        delivery platform, connecting your needs to your audience, making sure your businesses are
+                        transpoted with ease, Dashex is the best logistics for all and beyong.</p>
+                    <a href="#"
+                        class="inline-flex items-center text-gray-50 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm py-2.5 text-center">
+                        
+        <img src="{{ asset('icon-google.png') }}" alt="logo" style="height:80px; width: auto; cursor:pointer; z-index:999">
+                        {{-- Download Now!
+                        <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg> --}}
                     </a>
                 </div>
             </div>
@@ -372,13 +442,14 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script>
     var logo = document.querySelector('.logo-header'),
-    blurredBird = document.querySelector('.back-bird'),
-    forebird = document.querySelector('.fore-bird');
+        blurredBird = document.querySelector('.back-bird'),
+        forebird = document.querySelector('.fore-bird');
 
-    window.addEventListener('scroll', function(){
+    window.addEventListener('scroll', function() {
         var scrolled = window.scrolly;
-        logo.style.transform ="translate(0px,"+ scrolled/2 +"%)";
-        fore-bird.style.transform ="translate(0px,-"+ scrolled/40 +"%)";
+        logo.style.transform = "translate(0px," + scrolled / 2 + "%)";
+        fore - bird.style.transform = "translate(0px,-" + scrolled / 40 + "%)";
     })
 </script>
+
 </html>
