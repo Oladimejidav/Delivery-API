@@ -21,7 +21,12 @@ class AuthController extends Controller
         $fields = $request->validate([
             'name' => 'required|string',
             'email' => 'required|string|unique:users,email',
-            'password' => 'required|string|confirmed'
+            'password' => 'required|string|confirmed',
+            'user_id' => 'required|string',
+            'phoneNumber' => 'required|string',
+            'nationality' => 'required|string',
+            'state' => 'required|string',
+            'address' => 'required|string',
         ]);
 
         $user = User::create([

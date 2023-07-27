@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id');
-            $table->string('date_of_birth');
+            $table->string('date_of_birth')->nullable();
             $table->string('phoneNumber');
             $table->string('nationality');
             $table->string('state');

@@ -161,7 +161,7 @@
         <div class="back-bird"></div>
         <div class="w-full flex items-center justify-between">
             <a href="tel:+2347060443739"
-                class="bg-yellow-600 rounded-sm cursor-pointer py-5 px-8 m-4 text-gray-50 font-semibold font-serif hover:text-gray-300"><span>CALL</span></a>
+                class="bg-yellow-600 rounded-sm z-50 cursor-pointer py-5 px-8 m-4 text-gray-50 font-semibold font-serif hover:text-gray-300 text-center md:text-left mx-auto md:mx-4"><span>Call for your next delivery!</span></a>
  <img src="{{ asset('logo.png') }}" class="cta" alt="logo"
                 style="height: 10%; padding-left:3%; width: auto;">
         </div>
