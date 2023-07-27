@@ -117,6 +117,37 @@
                 border-color: transparent;
             }
         }
+        @media only screen and (max-device-width: 480px) {
+            header .fore-bird {
+                position: absolute;
+                top: 25%;
+                right: 17%;
+                width: 100%;
+                height: 100%;
+                background-image: url("{{ asset('img/white-mode.png') }}");
+                background-repeat: no-repeat;
+                background-position: right bottom;
+                background-size: 250px 500px;
+                z-index: 1;
+            }
+            .typing-demo {
+                width: 19ch;
+                animation: typing 2s steps(12), blink .5s step-end infinite alternate;
+                white-space: wrap;
+                overflow: hidden;
+                border-right: 3px solid;
+                font-family: monospace;
+                font-size: 2rem;
+                font-weight: 700;
+                color: beige;
+                text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
+                margin-top: 5rem;
+                background-color: rgba(128, 128, 128, 0.5);
+                /* 50% opacity gray color */
+                padding: 1rem;
+                border-radius: 0.5rem;
+            }
+        }
     </style>
 </head>
 
@@ -128,7 +159,7 @@
         <div class="w-full flex items-center justify-between">
             <a href="tel:+2347060443739"
                 class="bg-yellow-600 rounded-sm cursor-pointer p-2 px-4 m-4 text-gray-50 font-semibold font-serif hover:text-gray-300"><span>CALL</span></a>
-            <img src="{{ asset('logo.png') }}" class="cta" alt="logo"
+ <img src="{{ asset('logo.png') }}" class="cta" alt="logo"
                 style="height: 10%; padding-left:3%; width: auto;">
         </div>
         <div class="centered">
