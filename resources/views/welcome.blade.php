@@ -159,7 +159,7 @@
         <div class="w-full flex items-center justify-between">
             <a href="tel:+2347060443739"
                 class="bg-yellow-600 rounded-sm cursor-pointer p-2 px-4 m-4 text-gray-50 font-semibold font-serif hover:text-gray-300"><span>CALL</span></a>
-            <img src="{{ asset('img/logo.png') }}" class="cta" alt="logo"
+ <img src="{{ asset('logo.png') }}" class="cta" alt="logo"
                 style="height: 10%; padding-left:3%; width: auto;">
         </div>
         <div class="centered">
