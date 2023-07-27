@@ -15,23 +15,23 @@ return new class extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
-            $table->string('trackingNumber');
-            $table->string('description');
-            $table->string('sender');
-            $table->string('recipient');
-            $table->bigInteger('customer_id');
-            $table->string('weight');
-            $table->string('distance');
-            $table->string('dimensions');
-            $table->string('shipmentValue');
-            $table->string('shippingType');
+            $table->string('trackingNumber')->nullable();
+            $table->string('description')->nullable();
+            $table->string('sender')->nullable();
+            $table->string('recipient')->nullable();
+            $table->bigInteger('customer_id')->nullable();
+            $table->string('weight')->nullable();
+            $table->string('distance')->nullable();
+            $table->string('dimensions')->nullable();
+            $table->string('shipmentValue')->nullable();
+            $table->string('shippingType')->nullable();
             $table->string('isAccepted')->default(0);
             $table->string('isShipped')->default(0);
-            $table->string('shippingDate');
-            $table->string('deliveryDate');
-            $table->string('trackingHistory');
-            $table->string('imageUri');
-            $table->string('shippingCost');
+            $table->string('shippingDate')->nullable();
+            $table->string('deliveryDate')->nullable();
+            $table->string('trackingHistory')->nullable();
+            $table->string('imageUri')->nullable();
+            $table->string('shippingCost')->nullable();
 
             $table->timestamps();
         });

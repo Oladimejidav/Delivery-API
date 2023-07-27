@@ -49,7 +49,6 @@ class AuthController extends Controller
                 'customer_id' => $customer->customer->id,
                 'name' => $customer->name,
                 'email' => $customer->email,
-                'role' => $customer->role,
                 'date_of_birth' => $customer->customer->date_of_birth,
                 'phoneNumber' => $customer->customer->phoneNumber,
                 'nationality' => $customer->customer->nationality,
@@ -110,7 +109,7 @@ class AuthController extends Controller
                 'agent_id' => $agent->agent->user_id,
                 'name' => $agent->name,
                 'email' => $agent->email,
-                'role' => intval($agent->role),
+                'agent_role' => intval($agent->agent->agent_role),
                 'date_of_birth' => $agent->agent->date_of_birth,
                 'phoneNumber' => $agent->agent->phoneNumber,
                 'pasport' => $agent->agent->pasport,
@@ -124,7 +123,6 @@ class AuthController extends Controller
                 'guarantor_nationality' => $agent->agent->guarantor_nationality,
                 'guarantor_state' => $agent->agent->guarantor_state,
                 'guarantor_address' => $agent->agent->guarantor_address,
-                'agent_role' => $agent->agent->agent_role,
                 'created_at' => $agent->agent->created_at,
                 'updated_at' => $agent->agent->updated_at,
             ],
@@ -183,7 +181,7 @@ class AuthController extends Controller
     public function AgentLogin(Request $request)
     {
         $fields = $request->validate([
-            'email' => 'required|email
+            'email' => 'required|email',
             'password' => 'required'
         ]);
         // Check email
