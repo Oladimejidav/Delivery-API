@@ -36,6 +36,7 @@ class PackageController extends Controller
 
         $new_package = new Package();
         $new_package->fill($request->all());
+        $new_package->shippingDate = now();
         $new_package->customer_id = auth()->user()->id;
 
         // TO SAVE THE IMAGE
@@ -45,6 +46,7 @@ class PackageController extends Controller
         $new_package->imageUri = $imagename;
 
         $new_package->save();
+        return response()->json($new_package);
     }
 
 
@@ -53,7 +55,7 @@ class PackageController extends Controller
     public function get_package($id)
     {
         // users get their package alone
-        $package = Package::find($id);
+        $package = Package::findorFail($id);
         $data=[];
 
         if (auth()->user()->role == 0) {
@@ -93,17 +95,19 @@ class PackageController extends Controller
     public function update_isShipped(Request $request)
     {
         if (auth()->user()->role == 0) abort(403);
-        $package = Package::find($request->id);
+        $package = Package::findorFail($request->id);
         $package->isShipped = $request->isShipped;
+        $package->shippingDate = $request->shippingDate;
         $package->update();
+        return response()->json($package);
     }
 
     public function update_isAccepted(Request $request)
     {
         if (auth()->user()->role == 0) abort(403);
-        $package = Package::find($request->id);
+        $package = Package::findorFail($request->id);
         $package->isAccepted = $request->isAccepted;
-        $package->update();
+        return response()->json($package);
     }
 
 
