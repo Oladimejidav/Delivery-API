@@ -13,7 +13,7 @@ class ContactController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'phone' => 'required|digits:10|numeric',
+            'phone' => 'required|digits:11|numeric',
             'subject' => 'required',
             'message' => 'required',
         ]);
@@ -23,7 +23,7 @@ class ContactController extends Controller
         Contact::create($input);
 
         // Send mail to sales
-        Mail::send('contactMail', array(
+        Mail::send('welcome', array(
             'name' => $input['name'],
             'email' => $input['email'],
             'phone' => $input['phone'],

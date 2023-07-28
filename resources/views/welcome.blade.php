@@ -10,7 +10,11 @@
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!--@vite(['resources/css/app.css', 'resources/js/app.js'])-->
+    <link rel="preload" as="style" href="/build/assets/app-b948abd5.css" />
+    <link rel="modulepreload" href="/build/assets/app-d5e6a928.js" />
+    <link rel="stylesheet" href="/build/assets/app-b948abd5.css"/>
+    <script type="module" src="/build/assets/app-d5e6a928.js"></script>
     <style>
         * {
             margin: 0;
@@ -287,15 +291,7 @@
                         </p>
                     </div>
                     {{-- form --}}
-                    <div class="mb-4 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">  
-                        @if(Session::has('success'))
-                        <div class="alert alert-success">
-                            {{ Session::get('success') }}
-                            @php
-                                Session::forget('success');
-                            @endphp
-                        </div>
-                        @endif               
+                    <div class="mb-4 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">               
                         <form class="space-y-4" method="POST" action="{{ route('contact-form.store') }}">
                             @csrf
                             <div>
@@ -324,6 +320,7 @@
                                 <input type="text" id="subject" name="subject"
                                     class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded border border-gray-300 shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
                                     placeholder="Let us know how we can help you" required>
+                                    
                             </div>
                             <div class="sm:col-span-2">
                                 <label for="message" class="block text-base font-bold text-gray-900 ">Your
@@ -333,7 +330,7 @@
                                     placeholder="Leave a comment..."></textarea>
                             </div>
                             <button type="submit"
-                                class="py-3 px-5 text-sm font-medium text-center text-gray-50 rounded bg-orange-700 sm:w-fit hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-yellow-300">Send
+                                class="py-3 px-5 text-sm font-medium text-center text-gray-50 rounded bg-orange-700 sm:w-fit hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-yellow-300" name="submit">Send
                                 message</button>
                         </form>
                     </div>
@@ -374,10 +371,10 @@
                                         </div>
                                         <div class="ml-6 grow">
                                             <p class="mb-2 font-bold text-gray-900 ">
-                                                Online support
+                                                Sales questions
                                             </p>
                                             <p class="text-neutral-800 ">
-                                                sales@dashex.com.ng
+                                                +234-7060443739
                                             </p>
                                         </div>
                                     </div>
@@ -397,10 +394,10 @@
                                         </div>
                                         <div class="ml-6 grow">
                                             <p class="mb-2 font-bold text-gray-900 ">
-                                                Sales questions
+                                                Online support
                                             </p>
                                             <p class="text-neutral-800 ">
-                                                +234-7060443739
+                                                sales@dashex.com.ng
                                             </p>
                                         </div>
                                     </div>
