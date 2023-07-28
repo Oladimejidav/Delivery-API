@@ -23,7 +23,7 @@ class ContactController extends Controller
         Contact::create($input);
 
         // Send mail to sales
-        Mail::send('welcome', array(
+        Mail::send('contactMail', array(
             'name' => $input['name'],
             'email' => $input['email'],
             'phone' => $input['phone'],
