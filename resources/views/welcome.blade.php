@@ -8,6 +8,9 @@
     <title>Dashex | connecting the globe.</title>
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    
+       <!--Link for the facebook icon in the footer-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 
     <!-- Scripts -->
     <!--@vite(['resources/css/app.css', 'resources/js/app.js'])-->
@@ -94,7 +97,7 @@
 
         .typing-demo {
             width: 35ch;
-            animation: typing 2s steps(12), blink .5s step-end infinite alternate;
+            animation: typing 2s steps(12);
             white-space: wrap;
             overflow: hidden;
             border-right: 3px solid;
@@ -108,23 +111,19 @@
             /* 50% opacity gray color */
             padding: 1rem;
             border-radius: 0.5rem;
-            animation: blink-animation 1s infinite !important;
         }
-        @keyframes blink-animation{
-            0%(opacity: 1;)
-            50%(opacity: 0;)
-            100%(opacity:1;)
+        #blink_text {
+             animation: blinker 4.5s linear infinite;
+            }
+        @keyframes blinker {  
+         0% { opacity: 4.5; }
+         50% { opacity: 0.0; }
+         100% { opacity: 4.5; }
         }
 
         @keyframes typing {
             from {
                 width: 0;
-            }
-        }
-
-        @keyframes blink {
-            50% {
-                border-color: transparent;
             }
         }
         @media only screen and (max-device-width: 480px) {
@@ -160,6 +159,14 @@
                 padding: 1rem;
                 border-radius: 0.5rem;
             }
+            #blink_text {
+             animation: blinker 4.5s linear infinite;
+            }
+        @keyframes blinker {  
+         0% { opacity: 4.5; }
+         50% { opacity: 0.0; }
+         100% { opacity: 4.5; }
+        }
         }
     </style>
 </head>
@@ -172,12 +179,12 @@
         <div class="w-full flex items-center justify-between">
             <a href="tel:+2347060443739"
                 class="bg-[#FE5306] rounded-sm z-50 cursor-pointer py-5 px-8 m-4 text-gray-50 font-semibold font-serif hover:text-gray-300 text-center md:text-left mx-auto md:mx-4"><span>Call for your next delivery!</span></a>
-                <img src="{{ asset('img/logo.png') }}" class="cta" alt="logo"
+                <img src="{{ asset('img/logonew1.png') }}" class="cta" alt="logo"
                 style="height: 10%; padding-left:3%; width: auto;">
         </div>
         <div class="centered">
             <div class="wrapper">
-                <h1 class="typing-demo animate-pulse">
+                <h1 class="typing-demo" id="blink_text">
                     We Are Local In the state of Lagos
                 </h1>
             </div>
@@ -374,7 +381,9 @@
                                                 Sales questions
                                             </p>
                                             <p class="text-neutral-800 ">
+                                                <a href="tel:+2347060443739">
                                                 +234-7060443739
+                                                </a>
                                             </p>
                                         </div>
                                     </div>
@@ -393,11 +402,13 @@
                                             </div>
                                         </div>
                                         <div class="ml-6 grow">
-                                            <p class="mb-2 font-bold text-gray-900 ">
+                                            <p class="mb-2 font-bold text-gray-900 "> 
+                                                
+                                           
                                                 Online support
-                                            </p>
-                                            <p class="text-neutral-800 ">
-                                                sales@dashex.com.ng
+                                            </p> 
+                                            <p class="text-neutral-800 "> <a href="mailto:sales@dashex.com.ng">
+                                                sales@dashex.com.ng </a>
                                             </p>
                                         </div>
                                     </div>
@@ -485,10 +496,15 @@
             <p class="my-6">DashEx Logistics : Block 233 Low Cost H/Estate Isolo-Lagos</p>
             <ul class="flex flex-wrap justify-center items-center mb-6  text-gray-50">
                 <li>
-                    <a href="#" class="mr-4 hover:underline md:mr-6">Phone Number:(+234)7060443739</a>
+                    <a href="tel:+2347060443739" class="mr-4 hover:underline md:mr-6">Phone Number:(+234)7060443739</a>
                 </li>
                 <li>
-                    <a href="#" class="mr-4 hover:underline md:mr-6">Email: sales@dashex.com.ng</a>
+                    <a href="mailto:sales@dashex.com.ng" class="mr-4 hover:underline md:mr-6">Email: sales@dashex.com.ng</a>
+                </li>
+                   <li>
+                    <a href="https://www.facebook.com/profile.php?id=100094812375019"
+                        class="mr-4 hover:underline md:mr-6"><i style="font-size:30px"
+                            class="uil uil-facebook"></i></a>
                 </li>
             </ul>
             <span class="font-medium">© <span id="year"></span> <a href="#"
